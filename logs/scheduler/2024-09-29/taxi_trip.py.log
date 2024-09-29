@@ -359,3 +359,126 @@
 [2024-09-29T19:55:41.229+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:55:41.229+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-09-29T19:55:41.390+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:55:41.390+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
 [2024-09-29T19:55:41.406+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.642 seconds
+[2024-09-29T19:56:11.541+0000] {processor.py:161} INFO - Started process (PID=131) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:56:11.542+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:56:11.544+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:56:11.544+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:56:11.840+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:56:11.864+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:56:11.864+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:56:12.076+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:56:12.075+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:56:12.105+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.571 seconds
+[2024-09-29T19:56:42.248+0000] {processor.py:161} INFO - Started process (PID=133) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:56:42.248+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:56:42.250+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:56:42.250+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:56:42.568+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:56:42.736+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:56:42.736+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:56:42.757+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:56:42.757+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:56:42.771+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.531 seconds
+[2024-09-29T19:57:12.820+0000] {processor.py:161} INFO - Started process (PID=135) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:12.821+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:57:12.822+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:12.822+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:13.144+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:13.172+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:13.172+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:57:13.195+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:13.195+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:57:13.219+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.406 seconds
+[2024-09-29T19:57:24.289+0000] {processor.py:161} INFO - Started process (PID=137) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:24.290+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:57:24.291+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:24.291+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:24.296+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:24.295+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/taxi_trip.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/taxi_trip.py", line 148
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+[2024-09-29T19:57:24.296+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:24.314+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.031 seconds
+[2024-09-29T19:57:54.420+0000] {processor.py:161} INFO - Started process (PID=138) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:54.421+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:57:54.422+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:54.422+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:54.427+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:57:54.426+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/taxi_trip.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/taxi_trip.py", line 148
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+[2024-09-29T19:57:54.427+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:57:54.443+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.030 seconds
+[2024-09-29T19:58:24.583+0000] {processor.py:161} INFO - Started process (PID=139) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:58:24.584+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:58:24.585+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:58:24.585+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:58:24.590+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:58:24.589+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/taxi_trip.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/taxi_trip.py", line 148
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+[2024-09-29T19:58:24.590+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:58:24.606+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.030 seconds
+[2024-09-29T19:58:54.721+0000] {processor.py:161} INFO - Started process (PID=140) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:58:54.722+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:58:54.723+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:58:54.723+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:58:54.728+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:58:54.727+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/taxi_trip.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/taxi_trip.py", line 148
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+[2024-09-29T19:58:54.728+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:58:54.747+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.034 seconds
+[2024-09-29T19:59:24.863+0000] {processor.py:161} INFO - Started process (PID=141) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:59:24.865+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:59:24.866+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:59:24.865+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:59:24.871+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:59:24.871+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/taxi_trip.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/taxi_trip.py", line 148
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+[2024-09-29T19:59:24.872+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:59:24.890+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.035 seconds
+[2024-09-29T19:59:55.008+0000] {processor.py:161} INFO - Started process (PID=142) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:59:55.008+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:59:55.009+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:59:55.009+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:59:55.013+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:59:55.012+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/taxi_trip.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/taxi_trip.py", line 148
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+[2024-09-29T19:59:55.013+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:59:55.029+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.028 seconds
