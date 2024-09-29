@@ -93,3 +93,213 @@
 [2024-09-29T19:36:15.534+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:36:15.534+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-09-29T19:36:15.562+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:36:15.562+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
 [2024-09-29T19:36:15.584+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.375 seconds
+[2024-09-29T19:36:45.765+0000] {processor.py:161} INFO - Started process (PID=55) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:36:45.766+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:36:45.769+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:36:45.768+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:36:46.108+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:36:46.138+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:36:46.137+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:36:46.164+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:36:46.164+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:36:46.346+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.588 seconds
+[2024-09-29T19:37:16.538+0000] {processor.py:161} INFO - Started process (PID=57) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:37:16.539+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:37:16.540+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:37:16.540+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:37:16.885+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:37:16.916+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:37:16.915+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:37:17.104+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:37:17.104+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:37:17.122+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.591 seconds
+[2024-09-29T19:37:47.294+0000] {processor.py:161} INFO - Started process (PID=59) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:37:47.296+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:37:47.298+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:37:47.298+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:37:47.625+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:37:47.657+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:37:47.657+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:37:47.678+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:37:47.678+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:37:47.699+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.414 seconds
+[2024-09-29T19:38:17.863+0000] {processor.py:161} INFO - Started process (PID=61) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:38:17.864+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:38:17.866+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:38:17.866+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:38:18.191+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:38:18.218+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:38:18.217+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:38:18.241+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:38:18.240+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:38:18.258+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.401 seconds
+[2024-09-29T19:38:48.411+0000] {processor.py:161} INFO - Started process (PID=63) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:38:48.412+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:38:48.414+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:38:48.413+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:38:48.735+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:38:48.764+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:38:48.763+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:38:48.787+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:38:48.787+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:38:48.957+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.552 seconds
+[2024-09-29T19:39:19.155+0000] {processor.py:161} INFO - Started process (PID=65) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:39:19.156+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:39:19.157+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:39:19.157+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:39:19.500+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:39:19.527+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:39:19.527+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:39:19.715+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:39:19.714+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:39:19.736+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.587 seconds
+[2024-09-29T19:39:49.923+0000] {processor.py:161} INFO - Started process (PID=67) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:39:49.924+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:39:49.926+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:39:49.925+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:39:50.243+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:39:50.420+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:39:50.419+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:39:50.446+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:39:50.446+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:39:50.467+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.554 seconds
+[2024-09-29T19:40:20.624+0000] {processor.py:161} INFO - Started process (PID=69) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:40:20.626+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:40:20.630+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:40:20.630+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:40:20.976+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:40:21.004+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:40:21.003+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:40:21.028+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:40:21.027+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:40:21.049+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.431 seconds
+[2024-09-29T19:40:51.215+0000] {processor.py:161} INFO - Started process (PID=71) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:40:51.216+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:40:51.219+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:40:51.218+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:40:51.536+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:40:51.564+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:40:51.564+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:40:51.589+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:40:51.588+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:40:51.765+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.557 seconds
+[2024-09-29T19:41:21.921+0000] {processor.py:161} INFO - Started process (PID=73) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:41:21.922+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:41:21.923+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:41:21.923+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:41:22.258+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:41:22.288+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:41:22.288+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:41:22.480+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:41:22.480+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:41:22.501+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.586 seconds
+[2024-09-29T19:41:52.673+0000] {processor.py:161} INFO - Started process (PID=75) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:41:52.674+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:41:52.676+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:41:52.676+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:41:53.020+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:41:53.216+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:41:53.215+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:41:53.241+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:41:53.241+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:41:53.262+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.595 seconds
+[2024-09-29T19:42:23.438+0000] {processor.py:161} INFO - Started process (PID=77) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:42:23.440+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:42:23.441+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:42:23.441+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:42:23.784+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:42:23.812+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:42:23.812+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:42:23.835+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:42:23.835+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:42:23.857+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.426 seconds
+[2024-09-29T19:42:54.021+0000] {processor.py:161} INFO - Started process (PID=79) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:42:54.022+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:42:54.024+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:42:54.023+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:42:54.386+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:42:54.419+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:42:54.418+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:42:54.443+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:42:54.442+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:42:54.627+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.613 seconds
+[2024-09-29T19:43:24.749+0000] {processor.py:161} INFO - Started process (PID=81) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:43:24.750+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:43:24.752+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:43:24.752+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:43:25.080+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:43:25.106+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:43:25.106+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:43:25.287+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:43:25.287+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:43:25.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.565 seconds
+[2024-09-29T19:43:55.465+0000] {processor.py:161} INFO - Started process (PID=83) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:43:55.466+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:43:55.467+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:43:55.467+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:43:55.824+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:43:56.020+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:43:56.019+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:43:56.047+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:43:56.047+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:43:56.065+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.606 seconds
+[2024-09-29T19:44:26.221+0000] {processor.py:161} INFO - Started process (PID=85) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:44:26.222+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:44:26.223+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:44:26.223+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:44:26.573+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:44:26.606+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:44:26.605+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:44:26.632+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:44:26.632+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:44:26.656+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.444 seconds
+[2024-09-29T19:44:56.809+0000] {processor.py:161} INFO - Started process (PID=87) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:44:56.810+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:44:56.811+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:44:56.811+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:44:57.140+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:44:57.173+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:44:57.173+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:44:57.202+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:44:57.201+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:44:57.386+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.583 seconds
+[2024-09-29T19:45:27.501+0000] {processor.py:161} INFO - Started process (PID=89) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:45:27.502+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:45:27.504+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:45:27.504+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:45:27.906+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:45:27.942+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:45:27.941+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:45:28.148+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:45:28.148+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:45:28.174+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.680 seconds
+[2024-09-29T19:45:58.348+0000] {processor.py:161} INFO - Started process (PID=91) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:45:58.350+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:45:58.352+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:45:58.351+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:45:58.676+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:45:58.707+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:45:58.706+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:45:58.881+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:45:58.880+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:45:58.897+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.557 seconds
+[2024-09-29T19:46:29.049+0000] {processor.py:161} INFO - Started process (PID=93) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:46:29.050+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:46:29.052+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:46:29.051+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:46:29.369+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:46:29.396+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:46:29.396+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:46:29.420+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:46:29.419+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:46:29.437+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.396 seconds
+[2024-09-29T19:46:59.592+0000] {processor.py:161} INFO - Started process (PID=95) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:46:59.593+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:46:59.595+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:46:59.595+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:46:59.954+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:46:59.983+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:46:59.983+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:47:00.010+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:47:00.009+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:47:00.032+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.448 seconds
+[2024-09-29T19:47:30.201+0000] {processor.py:161} INFO - Started process (PID=97) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:47:30.202+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:47:30.204+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:47:30.203+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:47:30.563+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:47:30.594+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:47:30.594+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:47:30.800+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:47:30.799+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:47:30.822+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.629 seconds
+[2024-09-29T19:48:00.868+0000] {processor.py:161} INFO - Started process (PID=99) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:48:00.869+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:48:00.871+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:48:00.871+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:48:01.214+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:48:01.242+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:48:01.242+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:48:01.426+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:48:01.425+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:48:01.448+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.586 seconds
+[2024-09-29T19:48:31.611+0000] {processor.py:161} INFO - Started process (PID=101) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:48:31.612+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:48:31.614+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:48:31.613+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:48:31.947+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:48:31.977+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:48:31.977+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:48:32.005+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:48:32.005+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:48:32.026+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.422 seconds
+[2024-09-29T19:49:02.204+0000] {processor.py:161} INFO - Started process (PID=103) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:49:02.205+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:49:02.206+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:49:02.206+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:49:02.540+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:49:02.569+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:49:02.569+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:49:02.596+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:49:02.595+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:49:02.620+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.423 seconds
+[2024-09-29T19:49:32.786+0000] {processor.py:161} INFO - Started process (PID=105) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:49:32.787+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:49:32.790+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:49:32.789+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:49:33.152+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:49:33.183+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:49:33.182+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:49:33.366+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:49:33.365+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:49:33.382+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.601 seconds
+[2024-09-29T19:50:03.501+0000] {processor.py:161} INFO - Started process (PID=107) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:50:03.503+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:50:03.504+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:50:03.504+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:50:03.875+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:50:03.911+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:50:03.911+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:50:04.118+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:50:04.118+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:50:04.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.645 seconds
+[2024-09-29T19:50:34.294+0000] {processor.py:161} INFO - Started process (PID=109) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:50:34.295+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:50:34.296+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:50:34.296+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:50:34.787+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:50:34.989+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:50:34.989+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:50:35.016+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:50:35.016+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:50:35.039+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.752 seconds
+[2024-09-29T19:51:05.212+0000] {processor.py:161} INFO - Started process (PID=111) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:51:05.213+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:51:05.214+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:51:05.214+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:51:05.514+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:51:05.561+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:51:05.561+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:51:05.596+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:51:05.596+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:51:05.625+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.419 seconds
+[2024-09-29T19:51:35.775+0000] {processor.py:161} INFO - Started process (PID=113) to work on /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:51:35.776+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/taxi_trip.py for tasks to queue
+[2024-09-29T19:51:35.779+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:51:35.779+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:51:36.123+0000] {processor.py:840} INFO - DAG(s) 'Taxi_trip_pipeline' retrieved from /opt/airflow/dags/taxi_trip.py
+[2024-09-29T19:51:36.153+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:51:36.153+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-09-29T19:51:36.337+0000] {logging_mixin.py:188} INFO - [2024-09-29T19:51:36.337+0000] {dag.py:3954} INFO - Setting next_dagrun for Taxi_trip_pipeline to 2024-09-28 00:00:00+00:00, run_after=2024-09-29 00:00:00+00:00
+[2024-09-29T19:51:36.355+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/taxi_trip.py took 0.588 seconds
