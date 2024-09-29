@@ -144,7 +144,6 @@ with dag:
         provide_context=True
     )
 
-
     extract_green_date_task >> load_green_trip_task >> mark_files_as_processed_task
     extract_yellow_date_task >> load_yellow_trip_task >> mark_files_as_processed_task 
 
