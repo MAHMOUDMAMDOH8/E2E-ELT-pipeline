@@ -145,14 +145,20 @@ with dag:
     )
     models = ['stg_green_tripdata','stg_yellow_tripdata','stg_zone_lookup']
 
+<<<<<<< HEAD
     for model in models:
         dbt_run_task = BashOperator(
             task_id=f'dbt_run_{model}',
             bash_command=f'dbt run --profiles-dir /opt/airflow/DBT_Project --project-dir /opt/airflow/dbt_trip --models {model}',
             dag=dag,
         )
+=======
+>>>>>>> e990b08f54c9980816ec9a88fb8b3ffcdc2a58bb
 
     extract_green_date_task >> load_green_trip_task >> mark_files_as_processed_task
     extract_yellow_date_task >> load_yellow_trip_task >> mark_files_as_processed_task 
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> e990b08f54c9980816ec9a88fb8b3ffcdc2a58bb
