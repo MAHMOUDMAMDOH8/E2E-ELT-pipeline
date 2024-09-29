@@ -1,0 +1,25 @@
+[2024-09-20T13:08:02.276+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-20T13:08:02.490+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T13:07:59.496914+00:00 [queued]>
+[2024-09-20T13:08:02.497+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T13:07:59.496914+00:00 [queued]>
+[2024-09-20T13:08:02.498+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-20T13:08:02.510+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): load_data> on 2024-09-20 13:07:59.496914+00:00
+[2024-09-20T13:08:02.518+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=140) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-20T13:08:02.519+0000] {standard_task_runner.py:72} INFO - Started process 142 to run task
+[2024-09-20T13:08:02.520+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'load_data', 'manual__2024-09-20T13:07:59.496914+00:00', '--job-id', '255', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpeq5w_ky4']
+[2024-09-20T13:08:02.522+0000] {standard_task_runner.py:105} INFO - Job 255: Subtask load_data
+[2024-09-20T13:08:02.559+0000] {task_command.py:467} INFO - Running <TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T13:07:59.496914+00:00 [running]> on host 299ec99d9d69
+[2024-09-20T13:08:02.637+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T13:07:59.496914+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T13:07:59.496914+00:00'
+[2024-09-20T13:08:02.638+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-20T13:08:02.651+0000] {NYC_Taxi_pipeline.py:43} INFO - Start to load data
+[2024-09-20T13:08:02.652+0000] {data_process.py:28} INFO - Loading data into table trip...
+[2024-09-20T13:08:04.753+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-09-20T13:08:19.818+0000] {data_process.py:79} ERROR - Error during data load: can't adapt type 'NAType'
+[2024-09-20T13:08:19.899+0000] {NYC_Taxi_pipeline.py:46} INFO - Load data done
+[2024-09-20T13:08:19.900+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-20T13:08:19.909+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-20T13:08:19.909+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=NYC_Taxi_pipeline, task_id=load_data, run_id=manual__2024-09-20T13:07:59.496914+00:00, execution_date=20240920T130759, start_date=20240920T130802, end_date=20240920T130819
+[2024-09-20T13:08:19.940+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-20T13:08:19.953+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T13:08:19.955+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

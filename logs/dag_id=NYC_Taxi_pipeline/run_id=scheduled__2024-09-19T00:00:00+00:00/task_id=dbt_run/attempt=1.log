@@ -1,0 +1,60 @@
+[2024-09-20T17:01:18.895+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-20T17:01:18.918+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_run scheduled__2024-09-19T00:00:00+00:00 [queued]>
+[2024-09-20T17:01:18.927+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_run scheduled__2024-09-19T00:00:00+00:00 [queued]>
+[2024-09-20T17:01:18.928+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-20T17:01:18.940+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2024-09-19 00:00:00+00:00
+[2024-09-20T17:01:18.948+0000] {standard_task_runner.py:63} INFO - Started process 56 to run task
+[2024-09-20T17:01:18.952+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'dbt_run', 'scheduled__2024-09-19T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpnfq0db41']
+[2024-09-20T17:01:18.955+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask dbt_run
+[2024-09-20T17:01:19.000+0000] {task_command.py:426} INFO - Running <TaskInstance: NYC_Taxi_pipeline.dbt_run scheduled__2024-09-19T00:00:00+00:00 [running]> on host 6371a10ad06a
+[2024-09-20T17:01:19.074+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2024-09-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-19T00:00:00+00:00'
+[2024-09-20T17:01:19.075+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-20T17:01:19.086+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-20T17:01:19.086+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project --project-dir /opt/***/dbt_trip']
+[2024-09-20T17:01:19.101+0000] {subprocess.py:86} INFO - Output:
+[2024-09-20T17:01:21.974+0000] {subprocess.py:93} INFO - [0m17:01:21  Running with dbt=1.8.6
+[2024-09-20T17:01:22.266+0000] {subprocess.py:93} INFO - [0m17:01:22  Registered adapter: postgres=1.8.2
+[2024-09-20T17:01:22.447+0000] {subprocess.py:93} INFO - [0m17:01:22  Unable to do partial parsing because of a version mismatch
+[2024-09-20T17:01:24.083+0000] {subprocess.py:93} INFO - [0m17:01:24  Encountered an error:
+[2024-09-20T17:01:24.084+0000] {subprocess.py:93} INFO - [Errno 13] Permission denied: '/opt/***/dbt_trip/target/partial_parse.msgpack'
+[2024-09-20T17:01:24.085+0000] {subprocess.py:93} INFO - [0m17:01:24  Traceback (most recent call last):
+[2024-09-20T17:01:24.085+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+[2024-09-20T17:01:24.085+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2024-09-20T17:01:24.085+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+[2024-09-20T17:01:24.086+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:01:24.086+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+[2024-09-20T17:01:24.086+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:01:24.086+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+[2024-09-20T17:01:24.086+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:01:24.087+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+[2024-09-20T17:01:24.087+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:01:24.087+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 320, in wrapper
+[2024-09-20T17:01:24.087+0000] {subprocess.py:93} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2024-09-20T17:01:24.087+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/parser/manifest.py", line 1898, in parse_manifest
+[2024-09-20T17:01:24.088+0000] {subprocess.py:93} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2024-09-20T17:01:24.088+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/parser/manifest.py", line 330, in get_full_manifest
+[2024-09-20T17:01:24.088+0000] {subprocess.py:93} INFO -     manifest = loader.load()
+[2024-09-20T17:01:24.088+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/parser/manifest.py", line 525, in load
+[2024-09-20T17:01:24.089+0000] {subprocess.py:93} INFO -     self.write_manifest_for_partial_parse()
+[2024-09-20T17:01:24.089+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/parser/manifest.py", line 813, in write_manifest_for_partial_parse
+[2024-09-20T17:01:24.089+0000] {subprocess.py:93} INFO -     with open(path, "wb") as fp:
+[2024-09-20T17:01:24.089+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: '/opt/***/dbt_trip/target/partial_parse.msgpack'
+[2024-09-20T17:01:24.089+0000] {subprocess.py:93} INFO - 
+[2024-09-20T17:01:29.969+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-09-20T17:01:29.970+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-20T17:01:29.980+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-09-20T17:01:29.984+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=NYC_Taxi_pipeline, task_id=dbt_run, run_id=scheduled__2024-09-19T00:00:00+00:00, execution_date=20240919T000000, start_date=20240920T170118, end_date=20240920T170129
+[2024-09-20T17:01:29.996+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 4 for task dbt_run (Bash command failed. The command returned a non-zero exit code 2.; 56)
+[2024-09-20T17:01:30.022+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-20T17:01:30.037+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T17:01:30.038+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

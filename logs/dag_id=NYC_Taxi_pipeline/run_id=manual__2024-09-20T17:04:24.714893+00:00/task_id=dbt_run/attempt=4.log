@@ -1,0 +1,66 @@
+[2024-09-20T17:13:19.606+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-20T17:13:19.631+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_run manual__2024-09-20T17:04:24.714893+00:00 [queued]>
+[2024-09-20T17:13:19.640+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_run manual__2024-09-20T17:04:24.714893+00:00 [queued]>
+[2024-09-20T17:13:19.640+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2024-09-20T17:13:19.652+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2024-09-20 17:04:24.714893+00:00
+[2024-09-20T17:13:19.660+0000] {standard_task_runner.py:63} INFO - Started process 84 to run task
+[2024-09-20T17:13:19.663+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'dbt_run', 'manual__2024-09-20T17:04:24.714893+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmp05_1c3wr']
+[2024-09-20T17:13:19.665+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask dbt_run
+[2024-09-20T17:13:19.710+0000] {task_command.py:426} INFO - Running <TaskInstance: NYC_Taxi_pipeline.dbt_run manual__2024-09-20T17:04:24.714893+00:00 [running]> on host ebfded8325af
+[2024-09-20T17:13:19.789+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T17:04:24.714893+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T17:04:24.714893+00:00'
+[2024-09-20T17:13:19.790+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-20T17:13:19.802+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-20T17:13:19.803+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project --project-dir /opt/***/dbt_trip']
+[2024-09-20T17:13:19.819+0000] {subprocess.py:86} INFO - Output:
+[2024-09-20T17:13:22.144+0000] {subprocess.py:93} INFO - [0m17:13:22  Running with dbt=1.8.6
+[2024-09-20T17:13:22.423+0000] {subprocess.py:93} INFO - [0m17:13:22  Registered adapter: postgres=1.8.2
+[2024-09-20T17:13:22.599+0000] {subprocess.py:93} INFO - [0m17:13:22  Unable to do partial parsing because of a version mismatch
+[2024-09-20T17:13:24.258+0000] {subprocess.py:93} INFO - [0m17:13:24  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2024-09-20T17:13:24.258+0000] {subprocess.py:93} INFO - There are 2 unused configuration paths:
+[2024-09-20T17:13:24.259+0000] {subprocess.py:93} INFO - - models.fact_trip.core
+[2024-09-20T17:13:24.259+0000] {subprocess.py:93} INFO - - models.fact_trip.staging
+[2024-09-20T17:13:24.384+0000] {subprocess.py:93} INFO - [0m17:13:24  Encountered an error:
+[2024-09-20T17:13:24.385+0000] {subprocess.py:93} INFO - [Errno 13] Permission denied: '/opt/***/dbt_trip/target/manifest.json'
+[2024-09-20T17:13:24.387+0000] {subprocess.py:93} INFO - [0m17:13:24  Traceback (most recent call last):
+[2024-09-20T17:13:24.388+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+[2024-09-20T17:13:24.388+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2024-09-20T17:13:24.388+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+[2024-09-20T17:13:24.388+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:13:24.389+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+[2024-09-20T17:13:24.389+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:13:24.389+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+[2024-09-20T17:13:24.389+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:13:24.389+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+[2024-09-20T17:13:24.389+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2024-09-20T17:13:24.390+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/cli/requires.py", line 320, in wrapper
+[2024-09-20T17:13:24.390+0000] {subprocess.py:93} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2024-09-20T17:13:24.390+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/parser/manifest.py", line 1905, in parse_manifest
+[2024-09-20T17:13:24.390+0000] {subprocess.py:93} INFO -     write_manifest(manifest, runtime_config.project_target_path)
+[2024-09-20T17:13:24.390+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/parser/manifest.py", line 1884, in write_manifest
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -     manifest.write(path)
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/contracts/graph/manifest.py", line 1162, in write
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -     self.writable_manifest().write(path)
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt/artifacts/schemas/base.py", line 37, in write
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -     write_json(path, self.to_dict(omit_none=False, context={"artifact": True}))  # type: ignore
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/dbt_common/clients/system.py", line 305, in write_json
+[2024-09-20T17:13:24.391+0000] {subprocess.py:93} INFO -     with open(path, "w", encoding="utf-8") as f:
+[2024-09-20T17:13:24.392+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: '/opt/***/dbt_trip/target/manifest.json'
+[2024-09-20T17:13:24.392+0000] {subprocess.py:93} INFO - 
+[2024-09-20T17:13:25.341+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-09-20T17:13:25.341+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-20T17:13:25.353+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-09-20T17:13:25.357+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=NYC_Taxi_pipeline, task_id=dbt_run, run_id=manual__2024-09-20T17:04:24.714893+00:00, execution_date=20240920T170424, start_date=20240920T171319, end_date=20240920T171325
+[2024-09-20T17:13:25.371+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 13 for task dbt_run (Bash command failed. The command returned a non-zero exit code 2.; 84)
+[2024-09-20T17:13:25.407+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-20T17:13:25.428+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T17:13:25.429+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

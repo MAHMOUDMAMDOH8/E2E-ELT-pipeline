@@ -1,0 +1,57 @@
+[2024-09-21T09:13:11.881+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-21T09:13:11.918+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_models.dbt_Model_STG_dimtrip manual__2024-09-21T09:11:40.867116+00:00 [queued]>
+[2024-09-21T09:13:11.936+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_models.dbt_Model_STG_dimtrip manual__2024-09-21T09:11:40.867116+00:00 [queued]>
+[2024-09-21T09:13:11.936+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-21T09:13:11.958+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_models.dbt_Model_STG_dimtrip> on 2024-09-21 09:11:40.867116+00:00
+[2024-09-21T09:13:11.969+0000] {standard_task_runner.py:63} INFO - Started process 139 to run task
+[2024-09-21T09:13:11.974+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'dbt_models.dbt_Model_STG_dimtrip', 'manual__2024-09-21T09:11:40.867116+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpe3yfwvfx']
+[2024-09-21T09:13:11.978+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask dbt_models.dbt_Model_STG_dimtrip
+[2024-09-21T09:13:12.035+0000] {task_command.py:426} INFO - Running <TaskInstance: NYC_Taxi_pipeline.dbt_models.dbt_Model_STG_dimtrip manual__2024-09-21T09:11:40.867116+00:00 [running]> on host a7d215ebb90a
+[2024-09-21T09:13:12.175+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='dbt_models.dbt_Model_STG_dimtrip' AIRFLOW_CTX_EXECUTION_DATE='2024-09-21T09:11:40.867116+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-21T09:11:40.867116+00:00'
+[2024-09-21T09:13:12.176+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-21T09:13:12.195+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-21T09:13:12.196+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project --project-dir /opt/***/dbt_trip --models STG_dimtrip']
+[2024-09-21T09:13:12.212+0000] {subprocess.py:86} INFO - Output:
+[2024-09-21T09:13:16.641+0000] {subprocess.py:93} INFO - [0m09:13:16  Running with dbt=1.8.6
+[2024-09-21T09:13:17.210+0000] {subprocess.py:93} INFO - [0m09:13:17  Registered adapter: postgres=1.8.2
+[2024-09-21T09:13:17.611+0000] {subprocess.py:93} INFO - [0m09:13:17  Unable to do partial parsing because of a version mismatch
+[2024-09-21T09:13:20.684+0000] {subprocess.py:93} INFO - [0m09:13:20  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2024-09-21T09:13:20.685+0000] {subprocess.py:93} INFO - There are 2 unused configuration paths:
+[2024-09-21T09:13:20.685+0000] {subprocess.py:93} INFO - - models.fact_trip.core
+[2024-09-21T09:13:20.686+0000] {subprocess.py:93} INFO - - models.fact_trip.staging
+[2024-09-21T09:13:20.921+0000] {subprocess.py:93} INFO - [0m09:13:20  Found 5 models, 5 seeds, 1 source, 423 macros
+[2024-09-21T09:13:20.924+0000] {subprocess.py:93} INFO - [0m09:13:20
+[2024-09-21T09:13:21.179+0000] {subprocess.py:93} INFO - [0m09:13:21  Concurrency: 3 threads (target='dev')
+[2024-09-21T09:13:21.180+0000] {subprocess.py:93} INFO - [0m09:13:21
+[2024-09-21T09:13:21.203+0000] {subprocess.py:93} INFO - [0m09:13:21  1 of 1 START sql view model analysis.STG_dimtrip ............................... [RUN]
+[2024-09-21T09:13:21.307+0000] {subprocess.py:93} INFO - [0m09:13:21  1 of 1 ERROR creating sql view model analysis.STG_dimtrip ...................... [[31mERROR[0m in 0.10s]
+[2024-09-21T09:13:21.328+0000] {subprocess.py:93} INFO - [0m09:13:21
+[2024-09-21T09:13:21.329+0000] {subprocess.py:93} INFO - [0m09:13:21  Finished running 1 view model in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[2024-09-21T09:13:21.395+0000] {subprocess.py:93} INFO - [0m09:13:21
+[2024-09-21T09:13:21.396+0000] {subprocess.py:93} INFO - [0m09:13:21  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-09-21T09:13:21.396+0000] {subprocess.py:93} INFO - [0m09:13:21
+[2024-09-21T09:13:21.397+0000] {subprocess.py:93} INFO - [0m09:13:21    Database Error in model STG_dimtrip (models/Staging/STG_dimtrip.sql)
+[2024-09-21T09:13:21.398+0000] {subprocess.py:93} INFO -   relation "analysis.DIM_TripType" does not exist
+[2024-09-21T09:13:21.398+0000] {subprocess.py:93} INFO -   LINE 12:      from "nyc_taxi_trip"."analysis"."DIM_TripType"
+[2024-09-21T09:13:21.398+0000] {subprocess.py:93} INFO -                      ^
+[2024-09-21T09:13:21.399+0000] {subprocess.py:93} INFO -   compiled Code at target/run/fact_trip/models/Staging/STG_dimtrip.sql
+[2024-09-21T09:13:21.399+0000] {subprocess.py:93} INFO - [0m09:13:21
+[2024-09-21T09:13:21.399+0000] {subprocess.py:93} INFO - [0m09:13:21  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-09-21T09:13:22.346+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-09-21T09:13:22.347+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-21T09:13:22.358+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-09-21T09:13:22.361+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=NYC_Taxi_pipeline, task_id=dbt_models.dbt_Model_STG_dimtrip, run_id=manual__2024-09-21T09:11:40.867116+00:00, execution_date=20240921T091140, start_date=20240921T091311, end_date=20240921T091322
+[2024-09-21T09:13:22.374+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 35 for task dbt_models.dbt_Model_STG_dimtrip (Bash command failed. The command returned a non-zero exit code 1.; 139)
+[2024-09-21T09:13:22.420+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-21T09:13:22.434+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-21T09:13:22.435+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

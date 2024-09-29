@@ -1,0 +1,27 @@
+[2024-09-27T20:29:59.920+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-27T20:29:59.942+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-09-27T20:28:31.410767+00:00 [queued]>
+[2024-09-27T20:29:59.951+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-09-27T20:28:31.410767+00:00 [queued]>
+[2024-09-27T20:29:59.952+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-09-27T20:29:59.964+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_green_date> on 2024-09-27 20:28:31.410767+00:00
+[2024-09-27T20:29:59.971+0000] {standard_task_runner.py:63} INFO - Started process 67 to run task
+[2024-09-27T20:29:59.974+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_green_date', 'manual__2024-09-27T20:28:31.410767+00:00', '--job-id', '177', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpxwosx99a']
+[2024-09-27T20:29:59.977+0000] {standard_task_runner.py:91} INFO - Job 177: Subtask extraction_layer.extract_green_date
+[2024-09-27T20:30:00.020+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-09-27T20:28:31.410767+00:00 [running]> on host d7ea763741e5
+[2024-09-27T20:30:00.103+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T20:28:31.410767+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-27T20:28:31.410767+00:00'
+[2024-09-27T20:30:00.104+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-27T20:30:00.116+0000] {taxi_trip.py:36} INFO - Data extraction for green trip started
+[2024-09-27T20:30:00.122+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-09-27T20:30:00.123+0000] {Process_data.py:16} INFO - Start transforming Green Trip data...
+[2024-09-27T20:30:00.123+0000] {taxi_trip.py:47} ERROR - Error in green trip extraction
+Traceback (most recent call last):
+  File "/opt/airflow/dags/taxi_trip.py", line 38, in extract_green_date
+    green_trip_df, processed_files = process_green_trip(**db_credentials)
+  File "/opt/airflow/dags/scripts/Process_data.py", line 23, in process_green_trip
+    if is_file_processed(conn, file_name):
+NameError: name 'is_file_processed' is not defined
+[2024-09-27T20:30:00.124+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-27T20:30:00.124+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-27T20:30:00.134+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_green_date, run_id=manual__2024-09-27T20:28:31.410767+00:00, execution_date=20240927T202831, start_date=20240927T202959, end_date=20240927T203000
+[2024-09-27T20:30:00.186+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-27T20:30:00.222+0000] {taskinstance.py:3498} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2024-09-27T20:30:00.223+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

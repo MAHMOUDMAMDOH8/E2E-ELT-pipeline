@@ -1,0 +1,27 @@
+[2024-09-17T18:36:47.943+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-17T18:36:48.106+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data scheduled__2024-09-16T00:00:00+00:00 [queued]>
+[2024-09-17T18:36:48.112+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data scheduled__2024-09-16T00:00:00+00:00 [queued]>
+[2024-09-17T18:36:48.112+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-17T18:36:48.122+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): load_data> on 2024-09-16 00:00:00+00:00
+[2024-09-17T18:36:48.130+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=52) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-17T18:36:48.131+0000] {standard_task_runner.py:72} INFO - Started process 54 to run task
+[2024-09-17T18:36:48.131+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'load_data', 'scheduled__2024-09-16T00:00:00+00:00', '--job-id', '193', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpg0x8c8y4']
+[2024-09-17T18:36:48.133+0000] {standard_task_runner.py:105} INFO - Job 193: Subtask load_data
+[2024-09-17T18:36:48.174+0000] {task_command.py:467} INFO - Running <TaskInstance: NYC_Taxi_pipeline.load_data scheduled__2024-09-16T00:00:00+00:00 [running]> on host 103d737d0864
+[2024-09-17T18:36:48.247+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-16T00:00:00+00:00'
+[2024-09-17T18:36:48.247+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-17T18:36:48.259+0000] {NYC_Taxi_pipeline.py:48} INFO - Start to load data
+[2024-09-17T18:36:48.260+0000] {data_process.py:45} INFO - Loading data into table trip...
+[2024-09-17T18:36:48.260+0000] {db_utils.py:24} ERROR - Error while connecting to PostgreSQL: connection to server at "172.20.0.2", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-09-17T18:36:48.261+0000] {data_process.py:63} ERROR - Failed to connect to the database and load data into table trip
+[2024-09-17T18:36:48.261+0000] {NYC_Taxi_pipeline.py:51} INFO - Load data done
+[2024-09-17T18:36:48.261+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-17T18:36:48.269+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-17T18:36:48.270+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=NYC_Taxi_pipeline, task_id=load_data, run_id=scheduled__2024-09-16T00:00:00+00:00, execution_date=20240916T000000, start_date=20240917T183648, end_date=20240917T183648
+[2024-09-17T18:36:48.304+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-17T18:36:48.318+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-17T18:36:48.319+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

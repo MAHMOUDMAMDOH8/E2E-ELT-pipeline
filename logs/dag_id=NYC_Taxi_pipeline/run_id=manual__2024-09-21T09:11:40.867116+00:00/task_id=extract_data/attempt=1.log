@@ -1,0 +1,32 @@
+[2024-09-21T09:11:42.416+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-21T09:11:42.436+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.extract_data manual__2024-09-21T09:11:40.867116+00:00 [queued]>
+[2024-09-21T09:11:42.444+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.extract_data manual__2024-09-21T09:11:40.867116+00:00 [queued]>
+[2024-09-21T09:11:42.445+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-21T09:11:42.455+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data> on 2024-09-21 09:11:40.867116+00:00
+[2024-09-21T09:11:42.461+0000] {standard_task_runner.py:63} INFO - Started process 122 to run task
+[2024-09-21T09:11:42.464+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'extract_data', 'manual__2024-09-21T09:11:40.867116+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpaivh5k39']
+[2024-09-21T09:11:42.466+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask extract_data
+[2024-09-21T09:11:42.507+0000] {task_command.py:426} INFO - Running <TaskInstance: NYC_Taxi_pipeline.extract_data manual__2024-09-21T09:11:40.867116+00:00 [running]> on host a7d215ebb90a
+[2024-09-21T09:11:42.587+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-21T09:11:40.867116+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-21T09:11:40.867116+00:00'
+[2024-09-21T09:11:42.588+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-21T09:11:42.599+0000] {NYC_Taxi_pipeline.py:36} INFO - Data extraction started
+[2024-09-21T09:11:42.599+0000] {data_process.py:9} INFO - Loading Parquet files from the folder...
+[2024-09-21T09:11:42.599+0000] {data_process.py:11} INFO - Found Parquet files: []
+[2024-09-21T09:11:42.600+0000] {data_process.py:24} ERROR - Error while extracting trip data
+Traceback (most recent call last):
+  File "/opt/airflow/dags/scripts/data_process.py", line 17, in process_trip
+    trip_df = pd.concat(dataframes,ignore_index=True)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 368, in concat
+    op = _Concatenator(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/reshape/concat.py", line 425, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+[2024-09-21T09:11:42.600+0000] {NYC_Taxi_pipeline.py:38} INFO - Data extraction done, DataFrame saved to CSV
+[2024-09-21T09:11:42.601+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-21T09:11:42.601+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-21T09:11:42.610+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=NYC_Taxi_pipeline, task_id=extract_data, run_id=manual__2024-09-21T09:11:40.867116+00:00, execution_date=20240921T091140, start_date=20240921T091142, end_date=20240921T091142
+[2024-09-21T09:11:42.636+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-21T09:11:42.666+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-21T09:11:42.667+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

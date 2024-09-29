@@ -1,0 +1,37 @@
+[2024-09-24T08:13:31.551+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-24T08:13:31.579+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_group.load_taxi_zone manual__2024-09-24T08:13:27.847010+00:00 [queued]>
+[2024-09-24T08:13:31.588+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_group.load_taxi_zone manual__2024-09-24T08:13:27.847010+00:00 [queued]>
+[2024-09-24T08:13:31.588+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-24T08:13:31.603+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_group.load_taxi_zone> on 2024-09-24 08:13:27.847010+00:00
+[2024-09-24T08:13:31.612+0000] {standard_task_runner.py:63} INFO - Started process 149 to run task
+[2024-09-24T08:13:31.615+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_group.load_taxi_zone', 'manual__2024-09-24T08:13:27.847010+00:00', '--job-id', '76', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpofsmyc0x']
+[2024-09-24T08:13:31.619+0000] {standard_task_runner.py:91} INFO - Job 76: Subtask load_group.load_taxi_zone
+[2024-09-24T08:13:31.669+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_group.load_taxi_zone manual__2024-09-24T08:13:27.847010+00:00 [running]> on host 457e36aa430f
+[2024-09-24T08:13:31.771+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_group.load_taxi_zone' AIRFLOW_CTX_EXECUTION_DATE='2024-09-24T08:13:27.847010+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-24T08:13:27.847010+00:00'
+[2024-09-24T08:13:31.772+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-24T08:13:31.785+0000] {taxi_trip.py:71} INFO - Loading taxi zone lookup started
+[2024-09-24T08:13:31.785+0000] {Load_data.py:74} INFO - Loading zone lookup data...
+[2024-09-24T08:13:31.800+0000] {db_utils.py:17} INFO - Connected to PostgreSQL database successfully
+[2024-09-24T08:13:31.800+0000] {Load_data.py:81} INFO - Truncating zone_lookup table...
+[2024-09-24T08:13:31.805+0000] {Load_data.py:83} INFO - Table zone_lookup truncated successfully
+[2024-09-24T08:13:31.805+0000] {db_utils.py:29} INFO - PostgreSQL connection is closed
+[2024-09-24T08:13:31.806+0000] {db_utils.py:32} INFO - SQLAlchemy engine disposed
+[2024-09-24T08:13:31.806+0000] {db_utils.py:35} INFO - Loading data into table zone_lookup...
+[2024-09-24T08:13:31.811+0000] {db_utils.py:17} INFO - Connected to PostgreSQL database successfully
+[2024-09-24T08:13:31.833+0000] {db_utils.py:45} ERROR - Error while inserting data into table zone_lookup: (psycopg2.errors.UndefinedColumn) column "LocationID" of relation "zone_lookup" does not exist
+LINE 1: INSERT INTO zone_lookup ("LocationID", "Borough", "Zone", se...
+                                 ^
+
+[SQL: INSERT INTO zone_lookup ("LocationID", "Borough", "Zone", service_zone) VALUES (%(LocationID)s, %(Borough)s, %(Zone)s, %(service_zone)s)]
+[parameters: ({'LocationID': 1, 'Borough': 'EWR', 'Zone': 'Newark Airport', 'service_zone': 'EWR'}, {'LocationID': 2, 'Borough': 'Queens', 'Zone': 'Jamaica Bay', 'service_zone': 'Boro Zone'}, {'LocationID': 3, 'Borough': 'Bronx', 'Zone': 'Allerton/Pelham Gardens', 'service_zone': 'Boro Zone'}, {'LocationID': 4, 'Borough': 'Manhattan', 'Zone': 'Alphabet City', 'service_zone': 'Yellow Zone'}, {'LocationID': 5, 'Borough': 'Staten Island', 'Zone': 'Arden Heights', 'service_zone': 'Boro Zone'}, {'LocationID': 6, 'Borough': 'Staten Island', 'Zone': 'Arrochar/Fort Wadsworth', 'service_zone': 'Boro Zone'}, {'LocationID': 7, 'Borough': 'Queens', 'Zone': 'Astoria', 'service_zone': 'Boro Zone'}, {'LocationID': 8, 'Borough': 'Queens', 'Zone': 'Astoria Park', 'service_zone': 'Boro Zone'}  ... displaying 10 of 265 total bound parameter sets ...  {'LocationID': 264, 'Borough': 'Unknown', 'Zone': 'NV', 'service_zone': None}, {'LocationID': 265, 'Borough': 'Unknown', 'Zone': None, 'service_zone': None})]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-09-24T08:13:31.834+0000] {db_utils.py:29} INFO - PostgreSQL connection is closed
+[2024-09-24T08:13:31.834+0000] {db_utils.py:32} INFO - SQLAlchemy engine disposed
+[2024-09-24T08:13:31.834+0000] {Load_data.py:88} INFO - Zone lookup data loaded successfully
+[2024-09-24T08:13:31.834+0000] {taxi_trip.py:73} INFO - Loading taxi zone lookup done
+[2024-09-24T08:13:31.835+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-24T08:13:31.836+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-24T08:13:31.849+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_group.load_taxi_zone, run_id=manual__2024-09-24T08:13:27.847010+00:00, execution_date=20240924T081327, start_date=20240924T081331, end_date=20240924T081331
+[2024-09-24T08:13:31.907+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-24T08:13:31.928+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-24T08:13:31.929+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

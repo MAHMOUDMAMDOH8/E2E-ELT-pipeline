@@ -1,0 +1,38 @@
+[2024-09-20T13:04:33.028+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-20T13:04:33.224+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.extract_data manual__2024-09-20T13:04:31.320080+00:00 [queued]>
+[2024-09-20T13:04:33.232+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.extract_data manual__2024-09-20T13:04:31.320080+00:00 [queued]>
+[2024-09-20T13:04:33.233+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-20T13:04:33.244+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): extract_data> on 2024-09-20 13:04:31.320080+00:00
+[2024-09-20T13:04:33.253+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-20T13:04:33.254+0000] {standard_task_runner.py:72} INFO - Started process 126 to run task
+[2024-09-20T13:04:33.255+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'extract_data', 'manual__2024-09-20T13:04:31.320080+00:00', '--job-id', '251', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmp9zr9y8l2']
+[2024-09-20T13:04:33.257+0000] {standard_task_runner.py:105} INFO - Job 251: Subtask extract_data
+[2024-09-20T13:04:33.296+0000] {task_command.py:467} INFO - Running <TaskInstance: NYC_Taxi_pipeline.extract_data manual__2024-09-20T13:04:31.320080+00:00 [running]> on host 299ec99d9d69
+[2024-09-20T13:04:33.377+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T13:04:31.320080+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T13:04:31.320080+00:00'
+[2024-09-20T13:04:33.378+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-20T13:04:33.392+0000] {NYC_Taxi_pipeline.py:34} INFO - Data extraction started
+[2024-09-20T13:04:33.392+0000] {data_process.py:9} INFO - Loading Parquet files from the folder...
+[2024-09-20T13:04:33.393+0000] {data_process.py:11} INFO - Found Parquet files: []
+[2024-09-20T13:04:33.393+0000] {data_process.py:24} ERROR - Error while extracting trip data
+Traceback (most recent call last):
+  File "/opt/airflow/dags/scripts/data_process.py", line 17, in process_trip
+    trip_df = pd.concat(dataframes,ignore_index=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 380, in concat
+    op = _Concatenator(
+         ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 443, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 505, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+[2024-09-20T13:04:33.395+0000] {NYC_Taxi_pipeline.py:36} INFO - Data extraction done, DataFrame saved to CSV 
+[2024-09-20T13:04:33.395+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-20T13:04:33.405+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-20T13:04:33.405+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=NYC_Taxi_pipeline, task_id=extract_data, run_id=manual__2024-09-20T13:04:31.320080+00:00, execution_date=20240920T130431, start_date=20240920T130433, end_date=20240920T130433
+[2024-09-20T13:04:33.428+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-20T13:04:33.448+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T13:04:33.449+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

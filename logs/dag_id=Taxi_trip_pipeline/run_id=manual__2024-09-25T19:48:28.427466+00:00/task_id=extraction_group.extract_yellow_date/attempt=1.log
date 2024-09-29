@@ -1,0 +1,28 @@
+[2024-09-25T19:48:30.133+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-25T19:48:30.160+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_group.extract_yellow_date manual__2024-09-25T19:48:28.427466+00:00 [queued]>
+[2024-09-25T19:48:30.171+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_group.extract_yellow_date manual__2024-09-25T19:48:28.427466+00:00 [queued]>
+[2024-09-25T19:48:30.171+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-25T19:48:30.184+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_group.extract_yellow_date> on 2024-09-25 19:48:28.427466+00:00
+[2024-09-25T19:48:30.192+0000] {standard_task_runner.py:63} INFO - Started process 278 to run task
+[2024-09-25T19:48:30.194+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_group.extract_yellow_date', 'manual__2024-09-25T19:48:28.427466+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpbp8brz37']
+[2024-09-25T19:48:30.197+0000] {standard_task_runner.py:91} INFO - Job 137: Subtask extraction_group.extract_yellow_date
+[2024-09-25T19:48:30.244+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_group.extract_yellow_date manual__2024-09-25T19:48:28.427466+00:00 [running]> on host 3aa1deac3d71
+[2024-09-25T19:48:30.333+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_group.extract_yellow_date' AIRFLOW_CTX_EXECUTION_DATE='2024-09-25T19:48:28.427466+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-25T19:48:28.427466+00:00'
+[2024-09-25T19:48:30.334+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-25T19:48:30.345+0000] {taxi_trip.py:49} INFO - Data extraction for yellow trip started
+[2024-09-25T19:48:30.346+0000] {Process_data.py:33} INFO - Start transforming Yellow Trip data...
+[2024-09-25T19:48:30.793+0000] {taxi_trip.py:58} ERROR - Error in yellow trip extraction
+Traceback (most recent call last):
+  File "/opt/airflow/dags/taxi_trip.py", line 50, in extract_yellow_date
+    yellow_trip_df = process_yellow_trip()
+  File "/opt/airflow/dags/scripts/Process_data.py", line 43, in process_yellow_trip
+    if data_frames:
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 1527, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+[2024-09-25T19:48:30.811+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-25T19:48:30.811+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-25T19:48:31.031+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_group.extract_yellow_date, run_id=manual__2024-09-25T19:48:28.427466+00:00, execution_date=20240925T194828, start_date=20240925T194830, end_date=20240925T194831
+[2024-09-25T19:48:31.131+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-25T19:48:31.157+0000] {taskinstance.py:3498} INFO - 3 downstream tasks scheduled from follow-on schedule check
+[2024-09-25T19:48:31.159+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

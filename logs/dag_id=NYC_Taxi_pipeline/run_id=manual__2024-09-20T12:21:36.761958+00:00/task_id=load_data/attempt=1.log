@@ -1,0 +1,129 @@
+[2024-09-20T12:21:40.633+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-20T12:21:40.848+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T12:21:36.761958+00:00 [queued]>
+[2024-09-20T12:21:40.858+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T12:21:36.761958+00:00 [queued]>
+[2024-09-20T12:21:40.858+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-20T12:21:40.871+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): load_data> on 2024-09-20 12:21:36.761958+00:00
+[2024-09-20T12:21:40.880+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=100) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-20T12:21:40.881+0000] {standard_task_runner.py:72} INFO - Started process 102 to run task
+[2024-09-20T12:21:40.881+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'load_data', 'manual__2024-09-20T12:21:36.761958+00:00', '--job-id', '245', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpoyp06mpl']
+[2024-09-20T12:21:40.884+0000] {standard_task_runner.py:105} INFO - Job 245: Subtask load_data
+[2024-09-20T12:21:40.926+0000] {task_command.py:467} INFO - Running <TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T12:21:36.761958+00:00 [running]> on host 299ec99d9d69
+[2024-09-20T12:21:41.008+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T12:21:36.761958+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T12:21:36.761958+00:00'
+[2024-09-20T12:21:41.008+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-20T12:21:41.022+0000] {NYC_Taxi_pipeline.py:43} INFO - Start to load data
+[2024-09-20T12:21:41.022+0000] {data_process.py:27} INFO - Loading data into table trip...
+[2024-09-20T12:21:43.037+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-09-20T12:21:43.251+0000] {NYC_Taxi_pipeline.py:48} ERROR - Error in load
+Traceback (most recent call last):
+  File "/opt/airflow/dags/NYC_Taxi_pipeline.py", line 45, in load_data
+    load_to_postgres('trip', **db_credentials)
+  File "/opt/airflow/dags/scripts/data_process.py", line 60, in load_to_postgres
+    cursor.execute(insert_query, tuple(row))
+psycopg2.errors.UndefinedColumn: column "vendorid" of relation "trip" does not exist
+LINE 1: INSERT INTO trip (vendorid, lpep_pickup_datetime, lpep_dropo...
+                          ^
+
+[2024-09-20T12:21:43.252+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/NYC_Taxi_pipeline.py", line 45, in load_data
+    load_to_postgres('trip', **db_credentials)
+  File "/opt/airflow/dags/scripts/data_process.py", line 60, in load_to_postgres
+    cursor.execute(insert_query, tuple(row))
+psycopg2.errors.UndefinedColumn: column "vendorid" of relation "trip" does not exist
+LINE 1: INSERT INTO trip (vendorid, lpep_pickup_datetime, lpep_dropo...
+                          ^
+
+[2024-09-20T12:21:43.261+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=NYC_Taxi_pipeline, task_id=load_data, run_id=manual__2024-09-20T12:21:36.761958+00:00, execution_date=20240920T122136, start_date=20240920T122140, end_date=20240920T122143
+[2024-09-20T12:21:43.281+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-20T12:21:43.281+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 245 for task load_data (column "vendorid" of relation "trip" does not exist
+LINE 1: INSERT INTO trip (vendorid, lpep_pickup_datetime, lpep_dropo...
+                          ^
+; 102)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/NYC_Taxi_pipeline.py", line 45, in load_data
+    load_to_postgres('trip', **db_credentials)
+  File "/opt/airflow/dags/scripts/data_process.py", line 60, in load_to_postgres
+    cursor.execute(insert_query, tuple(row))
+psycopg2.errors.UndefinedColumn: column "vendorid" of relation "trip" does not exist
+LINE 1: INSERT INTO trip (vendorid, lpep_pickup_datetime, lpep_dropo...
+                          ^
+
+[2024-09-20T12:21:43.341+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-20T12:21:43.356+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T12:21:43.357+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,143 @@
+[2024-09-20T07:13:46.260+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-20T07:13:46.443+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T07:10:17.653304+00:00 [queued]>
+[2024-09-20T07:13:46.451+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T07:10:17.653304+00:00 [queued]>
+[2024-09-20T07:13:46.452+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2024-09-20T07:13:46.464+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): load_data> on 2024-09-20 07:10:17.653304+00:00
+[2024-09-20T07:13:46.471+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=99) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-20T07:13:46.473+0000] {standard_task_runner.py:72} INFO - Started process 101 to run task
+[2024-09-20T07:13:46.473+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'load_data', 'manual__2024-09-20T07:10:17.653304+00:00', '--job-id', '226', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpuaavubd2']
+[2024-09-20T07:13:46.475+0000] {standard_task_runner.py:105} INFO - Job 226: Subtask load_data
+[2024-09-20T07:13:46.513+0000] {task_command.py:467} INFO - Running <TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T07:10:17.653304+00:00 [running]> on host a8322311e4d8
+[2024-09-20T07:13:46.593+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T07:10:17.653304+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T07:10:17.653304+00:00'
+[2024-09-20T07:13:46.594+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-20T07:13:46.606+0000] {NYC_Taxi_pipeline.py:44} INFO - Start to load data
+[2024-09-20T07:13:47.390+0000] {data_process.py:36} INFO - Loading data into table trip...
+[2024-09-20T07:13:47.393+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-09-20T07:13:48.798+0000] {data_process.py:51} ERROR - Numeric value out of range for row 3576: VendorID                                   1
+lpep_pickup_datetime     2024-04-02 19:08:18
+lpep_dropoff_datetime    2024-04-02 19:08:18
+store_and_fwd_flag                         Y
+RatecodeID                              99.0
+PULocationID                              74
+DOLocationID                             264
+passenger_count                          0.0
+trip_distance                            0.0
+fare_amount                            46.85
+extra                                    0.0
+mta_tax                                  0.0
+tip_amount                               0.0
+tolls_amount                             0.0
+ehail_fee                                NaN
+improvement_surcharge                    0.0
+total_amount                           46.85
+payment_type                             3.0
+trip_type                                NaN
+congestion_surcharge                     0.0
+Name: 3576, dtype: object. Error: integer out of range
+
+[2024-09-20T07:13:48.799+0000] {NYC_Taxi_pipeline.py:50} ERROR - Error in load
+Traceback (most recent call last):
+  File "/opt/airflow/dags/NYC_Taxi_pipeline.py", line 47, in load_data
+    load_to_postgres('trip', df, **db_credentials)
+  File "/opt/airflow/dags/scripts/data_process.py", line 48, in load_to_postgres
+    cursor.execute(insert_query, tuple(row))
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-09-20T07:13:48.800+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/NYC_Taxi_pipeline.py", line 47, in load_data
+    load_to_postgres('trip', df, **db_credentials)
+  File "/opt/airflow/dags/scripts/data_process.py", line 48, in load_to_postgres
+    cursor.execute(insert_query, tuple(row))
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-09-20T07:13:48.809+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=NYC_Taxi_pipeline, task_id=load_data, run_id=manual__2024-09-20T07:10:17.653304+00:00, execution_date=20240920T071017, start_date=20240920T071346, end_date=20240920T071348
+[2024-09-20T07:13:48.826+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-20T07:13:48.827+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 226 for task load_data (current transaction is aborted, commands ignored until end of transaction block
+; 101)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/NYC_Taxi_pipeline.py", line 47, in load_data
+    load_to_postgres('trip', df, **db_credentials)
+  File "/opt/airflow/dags/scripts/data_process.py", line 48, in load_to_postgres
+    cursor.execute(insert_query, tuple(row))
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-09-20T07:13:48.892+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-20T07:13:48.911+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T07:13:48.912+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

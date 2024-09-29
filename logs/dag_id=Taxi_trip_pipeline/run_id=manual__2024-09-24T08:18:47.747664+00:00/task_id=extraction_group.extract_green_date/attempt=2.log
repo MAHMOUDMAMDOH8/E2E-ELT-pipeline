@@ -1,0 +1,40 @@
+[2024-09-24T08:27:36.299+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-24T08:27:36.331+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_group.extract_green_date manual__2024-09-24T08:18:47.747664+00:00 [queued]>
+[2024-09-24T08:27:36.342+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_group.extract_green_date manual__2024-09-24T08:18:47.747664+00:00 [queued]>
+[2024-09-24T08:27:36.342+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-09-24T08:27:36.359+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_group.extract_green_date> on 2024-09-24 08:18:47.747664+00:00
+[2024-09-24T08:27:36.368+0000] {standard_task_runner.py:63} INFO - Started process 204 to run task
+[2024-09-24T08:27:36.371+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_group.extract_green_date', 'manual__2024-09-24T08:18:47.747664+00:00', '--job-id', '90', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp_urv6sss']
+[2024-09-24T08:27:36.374+0000] {standard_task_runner.py:91} INFO - Job 90: Subtask extraction_group.extract_green_date
+[2024-09-24T08:27:36.420+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_group.extract_green_date manual__2024-09-24T08:18:47.747664+00:00 [running]> on host 457e36aa430f
+[2024-09-24T08:27:36.501+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_group.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-09-24T08:18:47.747664+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-24T08:18:47.747664+00:00'
+[2024-09-24T08:27:36.503+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-24T08:27:36.519+0000] {taxi_trip.py:36} INFO - Data extraction for green trip started
+[2024-09-24T08:27:36.520+0000] {Process_data.py:13} INFO - Start transforming Green Trip data...
+[2024-09-24T08:27:36.592+0000] {taxi_trip.py:40} ERROR - Error in green trip extraction
+Traceback (most recent call last):
+  File "/opt/airflow/dags/taxi_trip.py", line 37, in extract_green_date
+    process_green_trip()
+  File "/opt/airflow/dags/scripts/Process_data.py", line 24, in process_green_trip
+    valid_df.to_csv('./incloud/Staging/valid_df', index=False)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 3720, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1189, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 241, in save
+    with get_handle(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/common.py", line 734, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/common.py", line 597, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'incloud/Staging'
+[2024-09-24T08:27:36.599+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-24T08:27:36.600+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-24T08:27:36.795+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_group.extract_green_date, run_id=manual__2024-09-24T08:18:47.747664+00:00, execution_date=20240924T081847, start_date=20240924T082736, end_date=20240924T082736
+[2024-09-24T08:27:36.823+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-24T08:27:36.846+0000] {taskinstance.py:3498} INFO - 3 downstream tasks scheduled from follow-on schedule check
+[2024-09-24T08:27:36.847+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

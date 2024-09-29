@@ -1,0 +1,24 @@
+[2024-09-21T18:14:35.211+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-21T18:14:35.233+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_group.load_taxi_zone manual__2024-09-21T18:12:30.879273+00:00 [queued]>
+[2024-09-21T18:14:35.242+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_group.load_taxi_zone manual__2024-09-21T18:12:30.879273+00:00 [queued]>
+[2024-09-21T18:14:35.242+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-09-21T18:14:35.255+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_group.load_taxi_zone> on 2024-09-21 18:12:30.879273+00:00
+[2024-09-21T18:14:35.265+0000] {standard_task_runner.py:63} INFO - Started process 148 to run task
+[2024-09-21T18:14:35.267+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_group.load_taxi_zone', 'manual__2024-09-21T18:12:30.879273+00:00', '--job-id', '62', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpowh7f0n3']
+[2024-09-21T18:14:35.270+0000] {standard_task_runner.py:91} INFO - Job 62: Subtask load_group.load_taxi_zone
+[2024-09-21T18:14:35.317+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_group.load_taxi_zone manual__2024-09-21T18:12:30.879273+00:00 [running]> on host 5a2e5a872eaa
+[2024-09-21T18:14:35.423+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_group.load_taxi_zone' AIRFLOW_CTX_EXECUTION_DATE='2024-09-21T18:12:30.879273+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-21T18:12:30.879273+00:00'
+[2024-09-21T18:14:35.424+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-21T18:14:35.435+0000] {taxi_trip.py:71} INFO - Loading taxi zone lookup started
+[2024-09-21T18:14:35.436+0000] {Load_data.py:74} INFO - Loading zone lookup data...
+[2024-09-21T18:14:35.443+0000] {db_utils.py:22} ERROR - Error while connecting to PostgreSQL: (psycopg2.OperationalError) connection to server at "172.20.0.3", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2024-09-21T18:14:35.444+0000] {taxi_trip.py:73} INFO - Loading taxi zone lookup done
+[2024-09-21T18:14:35.444+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-21T18:14:35.444+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-21T18:14:35.454+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_group.load_taxi_zone, run_id=manual__2024-09-21T18:12:30.879273+00:00, execution_date=20240921T181230, start_date=20240921T181435, end_date=20240921T181435
+[2024-09-21T18:14:35.480+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-21T18:14:35.502+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-21T18:14:35.504+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

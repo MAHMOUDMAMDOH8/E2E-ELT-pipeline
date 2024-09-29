@@ -1,0 +1,18 @@
+[2024-09-27T20:30:00.887+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-27T20:30:00.911+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-09-27T20:28:31.410767+00:00 [queued]>
+[2024-09-27T20:30:00.922+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-09-27T20:28:31.410767+00:00 [queued]>
+[2024-09-27T20:30:00.922+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-09-27T20:30:00.939+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_layer.load_yellow_trip> on 2024-09-27 20:28:31.410767+00:00
+[2024-09-27T20:30:00.947+0000] {standard_task_runner.py:63} INFO - Started process 73 to run task
+[2024-09-27T20:30:00.949+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_layer.load_yellow_trip', 'manual__2024-09-27T20:28:31.410767+00:00', '--job-id', '179', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpswp4y7mc']
+[2024-09-27T20:30:00.952+0000] {standard_task_runner.py:91} INFO - Job 179: Subtask load_layer.load_yellow_trip
+[2024-09-27T20:30:00.996+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-09-27T20:28:31.410767+00:00 [running]> on host d7ea763741e5
+[2024-09-27T20:30:01.084+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_layer.load_yellow_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T20:28:31.410767+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-27T20:28:31.410767+00:00'
+[2024-09-27T20:30:01.085+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-27T20:30:01.108+0000] {taxi_trip.py:86} ERROR - No data found for yellow trip
+[2024-09-27T20:30:01.108+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-27T20:30:01.109+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-27T20:30:01.118+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_layer.load_yellow_trip, run_id=manual__2024-09-27T20:28:31.410767+00:00, execution_date=20240927T202831, start_date=20240927T203000, end_date=20240927T203001
+[2024-09-27T20:30:01.162+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-27T20:30:01.183+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-27T20:30:01.185+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

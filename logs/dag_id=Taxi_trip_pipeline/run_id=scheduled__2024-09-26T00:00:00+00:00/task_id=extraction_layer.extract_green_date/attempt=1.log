@@ -1,0 +1,22 @@
+[2024-09-27T12:46:38.808+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-27T12:46:38.835+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date scheduled__2024-09-26T00:00:00+00:00 [queued]>
+[2024-09-27T12:46:38.845+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date scheduled__2024-09-26T00:00:00+00:00 [queued]>
+[2024-09-27T12:46:38.846+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-27T12:46:38.861+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_green_date> on 2024-09-26 00:00:00+00:00
+[2024-09-27T12:46:38.867+0000] {standard_task_runner.py:63} INFO - Started process 52 to run task
+[2024-09-27T12:46:38.869+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_green_date', 'scheduled__2024-09-26T00:00:00+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp9bjmpm97']
+[2024-09-27T12:46:38.872+0000] {standard_task_runner.py:91} INFO - Job 159: Subtask extraction_layer.extract_green_date
+[2024-09-27T12:46:38.913+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date scheduled__2024-09-26T00:00:00+00:00 [running]> on host 5c22fb8fb442
+[2024-09-27T12:46:38.991+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-09-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-26T00:00:00+00:00'
+[2024-09-27T12:46:38.992+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-27T12:46:39.006+0000] {taxi_trip.py:36} INFO - Data extraction for green trip started
+[2024-09-27T12:46:39.007+0000] {Process_data.py:15} INFO - Start transforming Green Trip data...
+[2024-09-27T12:46:39.234+0000] {Process_data.py:24} INFO - data frams have 56551 row
+[2024-09-27T12:46:39.234+0000] {taxi_trip.py:38} INFO - Data extraction for green trip done
+[2024-09-27T12:46:39.947+0000] {taxi_trip.py:41} INFO - Pushed green trip data with 56551 rows to XCom
+[2024-09-27T12:46:39.948+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-27T12:46:39.949+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-27T12:46:39.958+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_green_date, run_id=scheduled__2024-09-26T00:00:00+00:00, execution_date=20240926T000000, start_date=20240927T124638, end_date=20240927T124639
+[2024-09-27T12:46:40.008+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-27T12:46:40.035+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-27T12:46:40.036+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

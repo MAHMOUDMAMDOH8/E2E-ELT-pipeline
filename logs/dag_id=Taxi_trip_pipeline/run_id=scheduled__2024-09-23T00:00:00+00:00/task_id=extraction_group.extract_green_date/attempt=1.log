@@ -1,0 +1,38 @@
+[2024-09-24T08:12:16.020+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-24T08:12:16.050+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_group.extract_green_date scheduled__2024-09-23T00:00:00+00:00 [queued]>
+[2024-09-24T08:12:16.061+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_group.extract_green_date scheduled__2024-09-23T00:00:00+00:00 [queued]>
+[2024-09-24T08:12:16.062+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-24T08:12:16.138+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_group.extract_green_date> on 2024-09-23 00:00:00+00:00
+[2024-09-24T08:12:16.145+0000] {standard_task_runner.py:63} INFO - Started process 58 to run task
+[2024-09-24T08:12:16.149+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_group.extract_green_date', 'scheduled__2024-09-23T00:00:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpen9v2oep']
+[2024-09-24T08:12:16.152+0000] {standard_task_runner.py:91} INFO - Job 67: Subtask extraction_group.extract_green_date
+[2024-09-24T08:12:16.310+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_group.extract_green_date scheduled__2024-09-23T00:00:00+00:00 [running]> on host 457e36aa430f
+[2024-09-24T08:12:16.556+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_group.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-09-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-23T00:00:00+00:00'
+[2024-09-24T08:12:16.557+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-24T08:12:16.595+0000] {taxi_trip.py:36} INFO - Data extraction for green trip started
+[2024-09-24T08:12:16.596+0000] {Process_data.py:13} INFO - Start transforming Green Trip data...
+[2024-09-24T08:12:17.242+0000] {taxi_trip.py:40} ERROR - Error in green trip extraction
+Traceback (most recent call last):
+  File "/opt/airflow/dags/taxi_trip.py", line 37, in extract_green_date
+    process_green_trip()
+  File "/opt/airflow/dags/scripts/Process_data.py", line 34, in process_green_trip
+    valid_df.to_csv('./valid_df/valid_green_trip.csv', index=False)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/generic.py", line 3720, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1189, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 241, in save
+    with get_handle(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+PermissionError: [Errno 13] Permission denied: './valid_df/valid_green_trip.csv'
+[2024-09-24T08:12:17.263+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-24T08:12:17.267+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-24T08:12:17.298+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_group.extract_green_date, run_id=scheduled__2024-09-23T00:00:00+00:00, execution_date=20240923T000000, start_date=20240924T081216, end_date=20240924T081217
+[2024-09-24T08:12:17.417+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-24T08:12:17.490+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-24T08:12:17.535+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

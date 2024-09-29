@@ -1,0 +1,54 @@
+[2024-09-20T17:16:28.095+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-20T17:16:28.124+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_run manual__2024-09-20T17:04:24.714893+00:00 [queued]>
+[2024-09-20T17:16:28.132+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.dbt_run manual__2024-09-20T17:04:24.714893+00:00 [queued]>
+[2024-09-20T17:16:28.133+0000] {taskinstance.py:2306} INFO - Starting attempt 7 of 7
+[2024-09-20T17:16:28.147+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2024-09-20 17:04:24.714893+00:00
+[2024-09-20T17:16:28.155+0000] {standard_task_runner.py:63} INFO - Started process 134 to run task
+[2024-09-20T17:16:28.158+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'dbt_run', 'manual__2024-09-20T17:04:24.714893+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmputp_5feb']
+[2024-09-20T17:16:28.160+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask dbt_run
+[2024-09-20T17:16:28.203+0000] {task_command.py:426} INFO - Running <TaskInstance: NYC_Taxi_pipeline.dbt_run manual__2024-09-20T17:04:24.714893+00:00 [running]> on host ebfded8325af
+[2024-09-20T17:16:28.292+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T17:04:24.714893+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T17:04:24.714893+00:00'
+[2024-09-20T17:16:28.293+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-20T17:16:28.306+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-20T17:16:28.307+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project --project-dir /opt/***/dbt_trip']
+[2024-09-20T17:16:28.323+0000] {subprocess.py:86} INFO - Output:
+[2024-09-20T17:16:30.678+0000] {subprocess.py:93} INFO - [0m17:16:30  Running with dbt=1.8.6
+[2024-09-20T17:16:30.952+0000] {subprocess.py:93} INFO - [0m17:16:30  Registered adapter: postgres=1.8.2
+[2024-09-20T17:16:31.168+0000] {subprocess.py:93} INFO - [0m17:16:31  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2024-09-20T17:16:31.168+0000] {subprocess.py:93} INFO - There are 2 unused configuration paths:
+[2024-09-20T17:16:31.169+0000] {subprocess.py:93} INFO - - models.fact_trip.core
+[2024-09-20T17:16:31.169+0000] {subprocess.py:93} INFO - - models.fact_trip.staging
+[2024-09-20T17:16:31.445+0000] {subprocess.py:93} INFO - [0m17:16:31  Found 1 model, 1 seed, 1 source, 423 macros
+[2024-09-20T17:16:31.447+0000] {subprocess.py:93} INFO - [0m17:16:31
+[2024-09-20T17:16:31.567+0000] {subprocess.py:93} INFO - [0m17:16:31  Concurrency: 3 threads (target='dev')
+[2024-09-20T17:16:31.568+0000] {subprocess.py:93} INFO - [0m17:16:31
+[2024-09-20T17:16:31.580+0000] {subprocess.py:93} INFO - [0m17:16:31  1 of 1 START sql view model analysis.test ...................................... [RUN]
+[2024-09-20T17:16:31.642+0000] {subprocess.py:93} INFO - [0m17:16:31  [31mUnhandled error while executing target/run/fact_trip/models/Staging/test.sql[0m
+[2024-09-20T17:16:31.643+0000] {subprocess.py:93} INFO - [Errno 13] Permission denied: '/opt/***/dbt_trip/target/run/fact_trip/models/Staging/test.sql'
+[2024-09-20T17:16:31.647+0000] {subprocess.py:93} INFO - [0m17:16:31  1 of 1 ERROR creating sql view model analysis.test ............................. [[31mERROR[0m in 0.06s]
+[2024-09-20T17:16:31.660+0000] {subprocess.py:93} INFO - [0m17:16:31
+[2024-09-20T17:16:31.660+0000] {subprocess.py:93} INFO - [0m17:16:31  Finished running 1 view model in 0 hours 0 minutes and 0.21 seconds (0.21s).
+[2024-09-20T17:16:31.701+0000] {subprocess.py:93} INFO - [0m17:16:31
+[2024-09-20T17:16:31.702+0000] {subprocess.py:93} INFO - [0m17:16:31  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-09-20T17:16:31.702+0000] {subprocess.py:93} INFO - [0m17:16:31
+[2024-09-20T17:16:31.703+0000] {subprocess.py:93} INFO - [0m17:16:31    [Errno 13] Permission denied: '/opt/***/dbt_trip/target/run/fact_trip/models/Staging/test.sql'
+[2024-09-20T17:16:31.704+0000] {subprocess.py:93} INFO - [0m17:16:31
+[2024-09-20T17:16:31.704+0000] {subprocess.py:93} INFO - [0m17:16:31  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-09-20T17:16:33.815+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-09-20T17:16:33.816+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-20T17:16:33.827+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-09-20T17:16:33.830+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=NYC_Taxi_pipeline, task_id=dbt_run, run_id=manual__2024-09-20T17:04:24.714893+00:00, execution_date=20240920T170424, start_date=20240920T171628, end_date=20240920T171633
+[2024-09-20T17:16:33.842+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 16 for task dbt_run (Bash command failed. The command returned a non-zero exit code 1.; 134)
+[2024-09-20T17:16:33.862+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-20T17:16:33.876+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T17:16:33.877+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

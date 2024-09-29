@@ -1,0 +1,25 @@
+[2024-09-27T20:37:09.162+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-27T20:37:09.187+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-09-27T20:28:31.410767+00:00 [queued]>
+[2024-09-27T20:37:09.196+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-09-27T20:28:31.410767+00:00 [queued]>
+[2024-09-27T20:37:09.197+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2024-09-27T20:37:09.208+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_layer.load_yellow_trip> on 2024-09-27 20:28:31.410767+00:00
+[2024-09-27T20:37:09.215+0000] {standard_task_runner.py:63} INFO - Started process 152 to run task
+[2024-09-27T20:37:09.218+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_layer.load_yellow_trip', 'manual__2024-09-27T20:28:31.410767+00:00', '--job-id', '188', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp2em5213w']
+[2024-09-27T20:37:09.221+0000] {standard_task_runner.py:91} INFO - Job 188: Subtask load_layer.load_yellow_trip
+[2024-09-27T20:37:09.269+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-09-27T20:28:31.410767+00:00 [running]> on host d7ea763741e5
+[2024-09-27T20:37:09.361+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_layer.load_yellow_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T20:28:31.410767+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-27T20:28:31.410767+00:00'
+[2024-09-27T20:37:09.362+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-27T20:37:12.096+0000] {taxi_trip.py:82} INFO - Loading yellow trip data started with 2964624 rows
+[2024-09-27T20:37:12.096+0000] {Load_data.py:46} INFO - Loading yellow trip data...
+[2024-09-27T20:37:12.097+0000] {Load_data.py:47} INFO - yellow  trip with 2964624rows
+[2024-09-27T20:37:14.885+0000] {db_utils.py:31} INFO - Loading data into table yellow_trip...
+[2024-09-27T20:37:14.891+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-09-27T20:37:29.394+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-09-27T20:37:29.396+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-27T20:37:29.398+0000] {process_utils.py:132} INFO - Sending 15 to group 152. PIDs of all processes in the group: [152]
+[2024-09-27T20:37:29.399+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 152
+[2024-09-27T20:37:29.399+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-09-27T20:37:29.436+0000] {db_utils.py:25} INFO - PostgreSQL connection is closed
+[2024-09-27T20:37:29.436+0000] {db_utils.py:28} INFO - SQLAlchemy engine disposed
+[2024-09-27T20:37:29.437+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-27T20:37:29.692+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=152, status='terminated', exitcode=0, started='20:37:09') (152) terminated with exit code 0

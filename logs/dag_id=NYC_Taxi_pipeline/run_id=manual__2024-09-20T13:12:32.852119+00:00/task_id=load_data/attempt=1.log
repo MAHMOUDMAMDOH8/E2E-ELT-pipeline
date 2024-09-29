@@ -1,0 +1,28 @@
+[2024-09-20T13:12:35.405+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-20T13:12:35.422+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T13:12:32.852119+00:00 [queued]>
+[2024-09-20T13:12:35.431+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T13:12:32.852119+00:00 [queued]>
+[2024-09-20T13:12:35.432+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-20T13:12:35.621+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): load_data> on 2024-09-20 13:12:32.852119+00:00
+[2024-09-20T13:12:35.630+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=160) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-20T13:12:35.631+0000] {standard_task_runner.py:72} INFO - Started process 162 to run task
+[2024-09-20T13:12:35.631+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'NYC_Taxi_pipeline', 'load_data', 'manual__2024-09-20T13:12:32.852119+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/NYC_Taxi_pipeline.py', '--cfg-path', '/tmp/tmpey_ahfc7']
+[2024-09-20T13:12:35.634+0000] {standard_task_runner.py:105} INFO - Job 260: Subtask load_data
+[2024-09-20T13:12:35.672+0000] {task_command.py:467} INFO - Running <TaskInstance: NYC_Taxi_pipeline.load_data manual__2024-09-20T13:12:32.852119+00:00 [running]> on host 299ec99d9d69
+[2024-09-20T13:12:35.748+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='NYC_Taxi_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-20T13:12:32.852119+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-20T13:12:32.852119+00:00'
+[2024-09-20T13:12:35.748+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-20T13:12:35.762+0000] {NYC_Taxi_pipeline.py:43} INFO - Start to load data
+[2024-09-20T13:12:35.762+0000] {data_process.py:28} INFO - Loading data into table trip...
+[2024-09-20T13:12:37.762+0000] {data_process.py:51} INFO - Original data shape: (339807, 20)
+[2024-09-20T13:12:37.812+0000] {data_process.py:53} INFO - Data shape after dropna: (0, 20)
+[2024-09-20T13:12:37.815+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-09-20T13:12:37.819+0000] {data_process.py:73} INFO - Data loaded successfully into table trip with 0 rows
+[2024-09-20T13:12:37.820+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-09-20T13:12:37.820+0000] {NYC_Taxi_pipeline.py:46} INFO - Load data done
+[2024-09-20T13:12:37.821+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-20T13:12:37.833+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-20T13:12:37.833+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=NYC_Taxi_pipeline, task_id=load_data, run_id=manual__2024-09-20T13:12:32.852119+00:00, execution_date=20240920T131232, start_date=20240920T131235, end_date=20240920T131237
+[2024-09-20T13:12:37.889+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-20T13:12:37.905+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-20T13:12:37.906+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,12 @@
+fact_trip:
+  outputs:
+    dev:
+      dbname: nyc_taxi_trip
+      host: 172.20.0.3
+      pass: airflow
+      port: 5432
+      schema: analysis
+      threads: 3
+      type: postgres
+      user: airflow
+  target: dev

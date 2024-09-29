@@ -1,0 +1,27 @@
+[2024-09-25T19:49:38.208+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-25T19:49:38.232+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_group.load_yellow_trip manual__2024-09-25T19:49:24.321638+00:00 [queued]>
+[2024-09-25T19:49:38.243+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_group.load_yellow_trip manual__2024-09-25T19:49:24.321638+00:00 [queued]>
+[2024-09-25T19:49:38.244+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-25T19:49:38.257+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_group.load_yellow_trip> on 2024-09-25 19:49:24.321638+00:00
+[2024-09-25T19:49:38.265+0000] {standard_task_runner.py:63} INFO - Started process 353 to run task
+[2024-09-25T19:49:38.268+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_group.load_yellow_trip', 'manual__2024-09-25T19:49:24.321638+00:00', '--job-id', '143', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpy16gsdzb']
+[2024-09-25T19:49:38.272+0000] {standard_task_runner.py:91} INFO - Job 143: Subtask load_group.load_yellow_trip
+[2024-09-25T19:49:38.323+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_group.load_yellow_trip manual__2024-09-25T19:49:24.321638+00:00 [running]> on host 3aa1deac3d71
+[2024-09-25T19:49:38.418+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_group.load_yellow_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-09-25T19:49:24.321638+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-25T19:49:24.321638+00:00'
+[2024-09-25T19:49:38.419+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-25T19:49:40.900+0000] {taxi_trip.py:78} INFO - Loading yellow trip data started with 2964624 rows
+[2024-09-25T19:49:40.901+0000] {Load_data.py:46} INFO - Loading yellow trip data...
+[2024-09-25T19:49:40.901+0000] {Load_data.py:47} INFO - yellow  trip with 2964624rows
+[2024-09-25T19:49:42.275+0000] {db_utils.py:33} INFO - Loading data into table yellow_trip...
+[2024-09-25T19:49:42.278+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-09-25T19:49:52.098+0000] {Load_data.py:76} ERROR - Error loading yellow_trip: column "vendorid" of relation "yellow_trip" does not exist
+LINE 1: INSERT INTO yellow_trip (VendorID, tpep_pickup_datetime, tpe...
+                                 ^
+
+[2024-09-25T19:49:52.793+0000] {taxi_trip.py:80} INFO - Loading yellow trip data done
+[2024-09-25T19:49:52.802+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-09-25T19:49:52.802+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-25T19:49:52.810+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_group.load_yellow_trip, run_id=manual__2024-09-25T19:49:24.321638+00:00, execution_date=20240925T194924, start_date=20240925T194938, end_date=20240925T194952
+[2024-09-25T19:49:52.907+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-09-25T19:49:52.923+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-25T19:49:52.924+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
