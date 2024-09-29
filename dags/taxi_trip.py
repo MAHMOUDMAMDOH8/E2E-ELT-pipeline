@@ -144,19 +144,8 @@ with dag:
         provide_context=True
     )
 
-    with TaskGroup('dbt_run') as dbt_group:
-        dbt_run_task = BashOperator(
-            task_id='dbt_run',
-            bash_command='cd /opt/airflow/dbt_trip && dbt run --profiles-dir /opt/airflow/DBT_Project/profiles.yml',
-            cwd='./dbt_trip',  
-        )
 
-        dbt_test_task = BashOperator(
-            task_id='dbt_test',
-            bash_command='DBT_PROFILES_DIR=/opt/airflow/DBT_Project dbt test --profiles-dir /opt/airflow/DBT_Project/profiles.yml',
-            cwd='dbt_trip',
-        )
     extract_green_date_task >> load_green_trip_task >> mark_files_as_processed_task
     extract_yellow_date_task >> load_yellow_trip_task >> mark_files_as_processed_task 
-    mark_files_as_processed_task >> dbt_run_task >> dbt_test_task
+
     
