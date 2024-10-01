@@ -30,9 +30,6 @@ green_trips AS (
         {{ adapter.quote("RatecodeID") }} AS ratecodeid,
         {{ map_rate_code("RCode") }} AS rate_code_description,
 
-        -- Trip type code with mapped description
-        {{ adapter.quote("trip_type") }} AS trip_type,
-        {{ map_trip_type("trip_t") }} AS trip_type_description,
 
         -- Pickup and Dropoff location IDs
         {{ adapter.quote("PULocationID") }} AS pickup_locationid,
@@ -59,13 +56,14 @@ green_trips AS (
         {{ adapter.quote("improvement_surcharge") }} AS improvement_surcharge,
         {{ adapter.quote("total_amount") }} AS total_amount,
         {{ adapter.quote("payment_type") }} AS payment_type,
-        {{ map_payment_type("payment") }} AS payment_type_description
+        {{ map_payment_type("payment") }} AS payment_type_description,
+
+        {{ adapter.quote("trip_type") }} AS trip_type,
+        {{ map_trip_type("trip_t") }} AS trip_type_description
 
     FROM source
     WHERE rn = 1
 )
 SELECT * FROM green_trips
 
-{% if var('is_test_run', default=true) %}
-  LIMIT 100
-{% endif %}
+

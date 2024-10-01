@@ -3,48 +3,16 @@
 }}
 
 WITH green_trip AS (
-    SELECT * FROM {{ ref('green_trip') }}
+    SELECT *, 'green' AS taxi_type FROM {{ ref('green_trip') }}
 ),
 yellow_trip AS (
-    SELECT * FROM {{ ref('yellow_trip') }}
+    SELECT *, 'yellow' AS taxi_type FROM {{ ref('yellow_trip') }}
 ),
 trips AS (
-    SELECT 
-        CAST(vendorid AS INTEGER) AS vendorid, -- Ensure both types match
-        CAST(ratecodeid AS INTEGER) AS ratecodeid, -- Ensure both types match
-        pickup_locationid,
-        dropoff_locationid,
-        pickup_datetime,
-        dropoff_datetime,
-        passenger_count,
-        trip_distance,
-        fare_amount,
-        extra,
-        mta_tax,
-        tip_amount,
-        tolls_amount,
-        improvement_surcharge,
-        total_amount,
-        trip_type  
+    SELECT *
     FROM green_trip 
     UNION ALL 
-    SELECT 
-        CAST(vendorid AS INTEGER) AS vendorid,
-        CAST(ratecodeid AS INTEGER) AS ratecodeid,
-        pickup_locationid,
-        dropoff_locationid,
-        pickup_datetime,
-        dropoff_datetime,
-        passenger_count,
-        trip_distance,
-        fare_amount,
-        extra,
-        mta_tax,
-        tip_amount,
-        tolls_amount,
-        improvement_surcharge,
-        total_amount,
-        1 AS trip_type
+    SELECT *
     FROM yellow_trip
 ),
 dim_zones AS (

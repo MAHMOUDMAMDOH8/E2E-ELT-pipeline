@@ -63,6 +63,4 @@ SELECT
 FROM source
 WHERE rn = 1  
 
-{% if var('is_test_run', default=true) %}
-  LIMIT 100
-{% endif %}
+
