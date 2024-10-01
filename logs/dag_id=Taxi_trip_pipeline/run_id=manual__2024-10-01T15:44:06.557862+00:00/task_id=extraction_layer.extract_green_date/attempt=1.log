@@ -1,0 +1,29 @@
+[2024-10-01T15:44:08.222+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-01T15:44:08.243+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-10-01T15:44:06.557862+00:00 [queued]>
+[2024-10-01T15:44:08.251+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-10-01T15:44:06.557862+00:00 [queued]>
+[2024-10-01T15:44:08.251+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-01T15:44:08.263+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_green_date> on 2024-10-01 15:44:06.557862+00:00
+[2024-10-01T15:44:08.270+0000] {standard_task_runner.py:63} INFO - Started process 2369 to run task
+[2024-10-01T15:44:08.273+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_green_date', 'manual__2024-10-01T15:44:06.557862+00:00', '--job-id', '314', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpt9zr7vbr']
+[2024-10-01T15:44:08.275+0000] {standard_task_runner.py:91} INFO - Job 314: Subtask extraction_layer.extract_green_date
+[2024-10-01T15:44:08.323+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-10-01T15:44:06.557862+00:00 [running]> on host fcb0f9e87e2b
+[2024-10-01T15:44:08.419+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-10-01T15:44:06.557862+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-01T15:44:06.557862+00:00'
+[2024-10-01T15:44:08.420+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-01T15:44:08.430+0000] {taxi_trip.py:37} INFO - Data extraction for green trip started
+[2024-10-01T15:44:08.437+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-01T15:44:08.437+0000] {Process_data.py:16} INFO - Start transforming Green Trip data...
+[2024-10-01T15:44:08.438+0000] {Process_data.py:24} INFO - File green_tripdata_2024-04.parquet has already been extracted before . Skipping......
+[2024-10-01T15:44:08.439+0000] {Process_data.py:24} INFO - File green_tripdata_2024-01.parquet has already been extracted before . Skipping......
+[2024-10-01T15:44:08.440+0000] {Process_data.py:24} INFO - File green_tripdata_2024-03.parquet has already been extracted before . Skipping......
+[2024-10-01T15:44:08.441+0000] {Process_data.py:24} INFO - File green_tripdata_2024-02.parquet has already been extracted before . Skipping......
+[2024-10-01T15:44:08.441+0000] {Process_data.py:24} INFO - File green_tripdata_2024-05.parquet has already been extracted before . Skipping......
+[2024-10-01T15:44:08.442+0000] {Process_data.py:27} INFO - Processing file green_tripdata_2024-06.parquet...
+[2024-10-01T15:44:08.560+0000] {Process_data.py:35} INFO - Green trip dataframe with 54748 rows
+[2024-10-01T15:44:08.561+0000] {taxi_trip.py:40} INFO - Data extraction for green trip done
+[2024-10-01T15:44:08.901+0000] {taxi_trip.py:44} INFO - Pushed green trip data with 54748 rows to XCom
+[2024-10-01T15:44:08.902+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-01T15:44:08.902+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-01T15:44:08.913+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_green_date, run_id=manual__2024-10-01T15:44:06.557862+00:00, execution_date=20241001T154406, start_date=20241001T154408, end_date=20241001T154408
+[2024-10-01T15:44:08.966+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-01T15:44:09.008+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T15:44:09.010+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

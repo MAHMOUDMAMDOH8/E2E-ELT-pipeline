@@ -21,6 +21,7 @@ dim_zones AS (
 ),
 renamed AS (
     SELECT 
+        ROW_NUMBER() OVER (ORDER BY t.vendorid, t.pickup_datetime, t.taxi_type) AS tripid,
         t.*, 
         pullz.borough AS pickup_borough, 
         pullz.zone AS pickup_zone, 

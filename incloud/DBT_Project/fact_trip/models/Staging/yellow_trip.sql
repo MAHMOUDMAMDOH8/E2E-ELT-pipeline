@@ -16,8 +16,6 @@ WITH source AS (
 )
 
 SELECT
-    -- Identifiers
-    ROW_NUMBER() OVER (ORDER BY "VendorID", "tpep_pickup_datetime") AS tripid,
     
     -- Vendor ID with mapped description
     {{ adapter.quote("VendorID") }} AS vendorid,

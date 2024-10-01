@@ -19,8 +19,6 @@ WITH source AS (
 ),
 green_trips AS (
     SELECT
-        -- Identifiers
-        ROW_NUMBER() OVER (ORDER BY "VendorID", "lpep_pickup_datetime") AS tripid,
         
         -- Vendor ID with mapped description
         {{ adapter.quote("VendorID") }} AS vendorid,

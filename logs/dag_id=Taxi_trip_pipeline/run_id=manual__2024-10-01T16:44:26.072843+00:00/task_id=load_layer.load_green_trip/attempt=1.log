@@ -1,0 +1,18 @@
+[2024-10-01T16:44:29.481+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-01T16:44:29.506+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip manual__2024-10-01T16:44:26.072843+00:00 [queued]>
+[2024-10-01T16:44:29.517+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip manual__2024-10-01T16:44:26.072843+00:00 [queued]>
+[2024-10-01T16:44:29.518+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-01T16:44:29.533+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_layer.load_green_trip> on 2024-10-01 16:44:26.072843+00:00
+[2024-10-01T16:44:29.540+0000] {standard_task_runner.py:63} INFO - Started process 2863 to run task
+[2024-10-01T16:44:29.544+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_layer.load_green_trip', 'manual__2024-10-01T16:44:26.072843+00:00', '--job-id', '367', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpj34inbah']
+[2024-10-01T16:44:29.548+0000] {standard_task_runner.py:91} INFO - Job 367: Subtask load_layer.load_green_trip
+[2024-10-01T16:44:29.602+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip manual__2024-10-01T16:44:26.072843+00:00 [running]> on host fcb0f9e87e2b
+[2024-10-01T16:44:29.689+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_layer.load_green_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-10-01T16:44:26.072843+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-01T16:44:26.072843+00:00'
+[2024-10-01T16:44:29.690+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-01T16:44:29.712+0000] {taxi_trip.py:74} ERROR - No data found for green trip
+[2024-10-01T16:44:29.712+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-01T16:44:29.713+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-01T16:44:29.723+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_layer.load_green_trip, run_id=manual__2024-10-01T16:44:26.072843+00:00, execution_date=20241001T164426, start_date=20241001T164429, end_date=20241001T164429
+[2024-10-01T16:44:29.755+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-01T16:44:29.783+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T16:44:29.785+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

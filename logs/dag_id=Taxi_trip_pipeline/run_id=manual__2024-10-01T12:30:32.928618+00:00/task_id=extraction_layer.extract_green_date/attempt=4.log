@@ -1,0 +1,28 @@
+[2024-10-01T12:52:08.230+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-01T12:52:08.258+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-10-01T12:30:32.928618+00:00 [queued]>
+[2024-10-01T12:52:08.268+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-10-01T12:30:32.928618+00:00 [queued]>
+[2024-10-01T12:52:08.268+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2024-10-01T12:52:08.283+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_green_date> on 2024-10-01 12:30:32.928618+00:00
+[2024-10-01T12:52:08.290+0000] {standard_task_runner.py:63} INFO - Started process 1154 to run task
+[2024-10-01T12:52:08.293+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_green_date', 'manual__2024-10-01T12:30:32.928618+00:00', '--job-id', '211', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp0khwl9fe']
+[2024-10-01T12:52:08.295+0000] {standard_task_runner.py:91} INFO - Job 211: Subtask extraction_layer.extract_green_date
+[2024-10-01T12:52:08.337+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date manual__2024-10-01T12:30:32.928618+00:00 [running]> on host fcb0f9e87e2b
+[2024-10-01T12:52:08.421+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-10-01T12:30:32.928618+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-01T12:30:32.928618+00:00'
+[2024-10-01T12:52:08.423+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-01T12:52:08.439+0000] {taxi_trip.py:37} INFO - Data extraction for green trip started
+[2024-10-01T12:52:08.446+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-01T12:52:08.446+0000] {Process_data.py:35} INFO - Start transforming Green Trip data...
+[2024-10-01T12:52:08.448+0000] {Process_data.py:46} INFO - File green_tripdata_2024-01.parquet has already been processed. Skipping...
+[2024-10-01T12:52:08.449+0000] {Process_data.py:49} INFO - Processing file green_tripdata_2020-12.csv...
+[2024-10-01T12:52:08.643+0000] {warnings.py:109} WARNING - /opt/***/dags/scripts/Process_data.py:50: DtypeWarning: Columns (3) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_parquet(file) if file.endswith('.parquet') else pd.read_csv(file)  # Read based on extension
+
+[2024-10-01T12:52:08.668+0000] {Process_data.py:56} INFO - Green trip dataframe with 83130 rows
+[2024-10-01T12:52:08.670+0000] {taxi_trip.py:40} INFO - Data extraction for green trip done
+[2024-10-01T12:52:09.020+0000] {taxi_trip.py:44} INFO - Pushed green trip data with 83130 rows to XCom
+[2024-10-01T12:52:09.024+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-01T12:52:09.025+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-01T12:52:09.035+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_green_date, run_id=manual__2024-10-01T12:30:32.928618+00:00, execution_date=20241001T123032, start_date=20241001T125208, end_date=20241001T125209
+[2024-10-01T12:52:09.067+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-01T12:52:09.099+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T12:52:09.101+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

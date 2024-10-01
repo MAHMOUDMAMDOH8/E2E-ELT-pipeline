@@ -1,0 +1,132 @@
+
+version: 2
+
+models:
+  - name: Fact_trips
+    description: >
+      Taxi trips corresponding to both service zones (Green and yellow).
+      The table contains records where both pickup and dropoff locations are valid and known zones. 
+      Each record corresponds to a trip uniquely identified by tripid. 
+    columns:
+      - name: tripid
+        data_type: int64
+        description: " identifier conformed by the combination of vendorid and pickyp time"
+
+      - name: vendorid
+        data_type: int64
+        description: ""
+
+      - name: vendor_description
+        data_type: text
+        description: "hold vendor_description "
+
+
+      - name: taxi_type
+        data_type: text
+        description: ""
+
+      - name: ratecodeid
+        data_type: int64
+        description: ""
+
+      - name: rate_code_description
+        data_type: text
+        description: "hold rate_code_description"
+
+      - name: pickup_locationid
+        data_type: int64
+        description: ""
+
+      - name: pickup_borough
+        data_type: string
+        description: ""
+
+      - name: pickup_zone
+        data_type: string
+        description: ""
+
+      - name: dropoff_locationid
+        data_type: int64
+        description: ""
+
+      - name: dropoff_borough
+        data_type: string
+        description: ""
+
+      - name: dropoff_zone
+        data_type: string
+        description: ""
+
+      - name: pickup_datetime
+        data_type: timestamp
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: timestamp
+        description: ""
+
+      - name: store_and_fwd_flag
+        data_type: string
+        description: ""
+
+      - name: passenger_count
+        data_type: int64
+        description: ""
+
+      - name: trip_distance
+        data_type: numeric
+        description: ""
+
+      - name: trip_type
+        data_type: int64
+        description: ""
+
+      - name: fare_amount
+        data_type: numeric
+        description: ""
+
+      - name: extra
+        data_type: numeric
+        description: ""
+
+      - name: mta_tax
+        data_type: numeric
+        description: ""
+
+      - name: tip_amount
+        data_type: numeric
+        description: ""
+
+      - name: tolls_amount
+        data_type: numeric
+        description: ""
+
+      - name: ehail_fee
+        data_type: numeric
+        description: ""
+
+      - name: improvement_surcharge
+        data_type: numeric
+        description: ""
+
+      - name: total_amount
+        data_type: numeric
+        description: ""
+
+      - name: payment_type
+        data_type: int64
+        description: ""
+
+      - name: payment_type_description
+        data_type: string
+        description: ""
+
+      - name: store_and_fwd_flag
+        data_type: string
+        description: ""
+
+
+      - name: trip_type_description
+        data_type: string
+        description: ""
+

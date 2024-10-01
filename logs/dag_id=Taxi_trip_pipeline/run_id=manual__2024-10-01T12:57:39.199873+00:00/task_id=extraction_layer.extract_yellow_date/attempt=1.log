@@ -1,0 +1,79 @@
+[2024-10-01T12:57:40.424+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-01T12:57:40.449+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date manual__2024-10-01T12:57:39.199873+00:00 [queued]>
+[2024-10-01T12:57:40.457+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date manual__2024-10-01T12:57:39.199873+00:00 [queued]>
+[2024-10-01T12:57:40.457+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-01T12:57:40.472+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_yellow_date> on 2024-10-01 12:57:39.199873+00:00
+[2024-10-01T12:57:40.481+0000] {standard_task_runner.py:63} INFO - Started process 1368 to run task
+[2024-10-01T12:57:40.484+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_yellow_date', 'manual__2024-10-01T12:57:39.199873+00:00', '--job-id', '232', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpfna043b5']
+[2024-10-01T12:57:40.486+0000] {standard_task_runner.py:91} INFO - Job 232: Subtask extraction_layer.extract_yellow_date
+[2024-10-01T12:57:40.531+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date manual__2024-10-01T12:57:39.199873+00:00 [running]> on host fcb0f9e87e2b
+[2024-10-01T12:57:40.619+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_yellow_date' AIRFLOW_CTX_EXECUTION_DATE='2024-10-01T12:57:39.199873+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-01T12:57:39.199873+00:00'
+[2024-10-01T12:57:40.619+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-01T12:57:40.631+0000] {taxi_trip.py:52} INFO - Data extraction for yellow trip started
+[2024-10-01T12:57:40.637+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-01T12:57:40.637+0000] {Process_data.py:103} INFO - Start transforming Yellow Trip data...
+[2024-10-01T12:57:40.639+0000] {Process_data.py:139} INFO - Processing file yellow_tripdata_2024-01.parquet...
+[2024-10-01T12:57:40.934+0000] {Process_data.py:139} INFO - Processing file yellow_tripdata_2020-04.csv...
+[2024-10-01T12:57:52.668+0000] {Process_data.py:151} INFO - Yellow trip dataframe with 3202617 rows
+[2024-10-01T12:57:52.675+0000] {taxi_trip.py:55} INFO - Data extraction for yellow trip done
+[2024-10-01T12:57:54.578+0000] {xcom.py:675} ERROR - Object of type DataFrame is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-10-01T12:57:54.579+0000] {taxi_trip.py:63} ERROR - Error in yellow trip extraction
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/serialization/serde.py", line 148, in serialize
+    data, serialized_classname, version, is_serialized = _serializers[qn].serialize(o)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/serialization/serializers/pandas.py", line 49, in serialize
+    table = pa.Table.from_pandas(o)
+  File "pyarrow/table.pxi", line 3869, in pyarrow.lib.Table.from_pandas
+  File "/home/airflow/.local/lib/python3.9/site-packages/pyarrow/pandas_compat.py", line 626, in dataframe_to_arrays
+    arrays[i] = maybe_fut.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pyarrow/pandas_compat.py", line 600, in convert_column
+    raise e
+  File "/home/airflow/.local/lib/python3.9/site-packages/pyarrow/pandas_compat.py", line 594, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+  File "pyarrow/array.pxi", line 340, in pyarrow.lib.array
+  File "pyarrow/array.pxi", line 86, in pyarrow.lib._ndarray_to_array
+  File "pyarrow/error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowTypeError: ("object of type <class 'str'> cannot be converted to int", 'Conversion failed for column tpep_pickup_datetime with type object')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/taxi_trip.py", line 57, in extract_yellow_date
+    ti.xcom_push(key='yellow_trip_df', value=yellow_trip_df)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3197, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/xcom.py", line 246, in set
+    value = cls.serialize_value(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/xcom.py", line 673, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+  File "/usr/local/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+  File "/usr/local/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+  File "/usr/local/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-10-01T12:57:54.582+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-01T12:57:54.583+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-01T12:57:54.591+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_yellow_date, run_id=manual__2024-10-01T12:57:39.199873+00:00, execution_date=20241001T125739, start_date=20241001T125740, end_date=20241001T125754
+[2024-10-01T12:57:54.779+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-01T12:57:54.811+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T12:57:54.812+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

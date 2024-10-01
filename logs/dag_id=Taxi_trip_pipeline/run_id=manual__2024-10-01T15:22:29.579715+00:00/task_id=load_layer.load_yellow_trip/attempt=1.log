@@ -1,0 +1,27 @@
+[2024-10-01T15:22:45.224+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-01T15:22:45.244+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-10-01T15:22:29.579715+00:00 [queued]>
+[2024-10-01T15:22:45.252+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-10-01T15:22:29.579715+00:00 [queued]>
+[2024-10-01T15:22:45.253+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-01T15:22:45.265+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_layer.load_yellow_trip> on 2024-10-01 15:22:29.579715+00:00
+[2024-10-01T15:22:45.272+0000] {standard_task_runner.py:63} INFO - Started process 2223 to run task
+[2024-10-01T15:22:45.275+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_layer.load_yellow_trip', 'manual__2024-10-01T15:22:29.579715+00:00', '--job-id', '298', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpvgmxoxk4']
+[2024-10-01T15:22:45.277+0000] {standard_task_runner.py:91} INFO - Job 298: Subtask load_layer.load_yellow_trip
+[2024-10-01T15:22:45.319+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_layer.load_yellow_trip manual__2024-10-01T15:22:29.579715+00:00 [running]> on host fcb0f9e87e2b
+[2024-10-01T15:22:45.400+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_layer.load_yellow_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-10-01T15:22:29.579715+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-01T15:22:29.579715+00:00'
+[2024-10-01T15:22:45.401+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-01T15:22:48.060+0000] {taxi_trip.py:83} INFO - Loading yellow trip data started with 3582628 rows
+[2024-10-01T15:22:48.061+0000] {Load_data.py:46} INFO - Loading yellow trip data...
+[2024-10-01T15:22:48.061+0000] {Load_data.py:47} INFO - yellow  trip with 3582628rows
+[2024-10-01T15:22:49.752+0000] {db_utils.py:31} INFO - Loading data into table yellow_trip...
+[2024-10-01T15:22:49.760+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-01T15:28:07.042+0000] {db_utils.py:38} INFO - Data loaded successfully into table yellow_trip with 3582628 rows
+[2024-10-01T15:28:07.047+0000] {db_utils.py:25} INFO - PostgreSQL connection is closed
+[2024-10-01T15:28:07.049+0000] {db_utils.py:28} INFO - SQLAlchemy engine disposed
+[2024-10-01T15:28:07.050+0000] {Load_data.py:74} INFO - Yellow trip data loaded successfully
+[2024-10-01T15:28:07.069+0000] {taxi_trip.py:85} INFO - Loading yellow trip data done
+[2024-10-01T15:28:07.606+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-01T15:28:07.607+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-01T15:28:07.629+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_layer.load_yellow_trip, run_id=manual__2024-10-01T15:22:29.579715+00:00, execution_date=20241001T152229, start_date=20241001T152245, end_date=20241001T152807
+[2024-10-01T15:28:08.139+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-01T15:28:09.145+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T15:28:09.180+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

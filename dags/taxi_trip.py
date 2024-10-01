@@ -19,7 +19,7 @@ dag = DAG(
     'Taxi_trip_pipeline',
     default_args=default_args,
     description='E2E Taxi Trip Pipeline',
-    schedule_interval='@daily',
+    schedule_interval='*/15 * * * *',
     start_date=days_ago(1),
     catchup=False,
 )
@@ -145,20 +145,20 @@ with dag:
     )
     
     # Create the DBT staging layer task group
-    with TaskGroup('dbt_staging_layer') as dbt_staging_group:
+    with TaskGroup('dbt_transformation_layer') as dbt_staging_group:
         models = ['green_trip', 'yellow_trip', 'zone_lookup']
         dbt_run_tasks = []
         for model in models:
             dbt_run_task = BashOperator(
-                task_id=f'dbt_run_{model}',
+                task_id=f'dbt_run_model_{model}',
                 bash_command=f'dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models {model}',
                 dag=dag,
             )
             dbt_run_tasks.append(dbt_run_task)
     
     dbt_run_fact_trip = BashOperator(
-        task_id='dbt_run_fact_trip',
-        bash_command='dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models Fact_trip'
+        task_id='dbt_run_model_fact_trip',
+        bash_command='dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models Fact_trips'
     )
 
    
