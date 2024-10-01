@@ -11,7 +11,7 @@ sources:
       - name: zone_lookup
 
 models:
-  - name: stg_green_tripdata
+  - name: green_trip
     description: >
       Trip data for green taxis.
     columns:
@@ -46,14 +46,14 @@ models:
           The location ID where the trip started.
         tests: 
           - relationships:
-              to: ref('stg_zone_lookup')
+              to: ref('zone_lookup')
               field: LocationID
       - name: DOLocationID
         description: >
           The location ID where the trip ended.
         tests: 
           - relationships:
-              to: ref('stg_zone_lookup')
+              to: ref('zone_lookup')
               field: LocationID
       - name: passenger_count
         description: >
@@ -99,7 +99,7 @@ models:
         description: >
           A $2.50 surcharge for trips that begin or end in Manhattan below 96th Street.
 
-  - name: stg_yellow_tripdata
+  - name: yellow_trip
     description: >
       Trip data for yellow taxis.
     columns:
@@ -134,14 +134,14 @@ models:
           The location ID where the trip started.
         tests: 
           - relationships:
-              to: ref('stg_zone_lookup')
+              to: ref('zone_lookup')
               field: LocationID
       - name: DOLocationID
         description: >
           The location ID where the trip ended.
         tests: 
           - relationships:
-              to: ref('stg_zone_lookup')
+              to: ref('zone_lookup')
               field: LocationID
       - name: passenger_count
         description: >
@@ -187,7 +187,7 @@ models:
         description: >
           A $2.50 surcharge for trips that begin or end in Manhattan below 96th Street.
 
-  - name: stg_zone_lookup
+  - name: zone_lookup
     description: >
       A lookup table containing the taxi zone information for NYC trips.
     columns:

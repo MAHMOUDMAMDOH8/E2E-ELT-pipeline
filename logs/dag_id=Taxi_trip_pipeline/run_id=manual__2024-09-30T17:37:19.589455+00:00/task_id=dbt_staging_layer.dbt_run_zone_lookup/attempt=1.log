@@ -1,0 +1,44 @@
+[2024-09-30T17:42:16.350+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-30T17:42:16.381+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_staging_layer.dbt_run_zone_lookup manual__2024-09-30T17:37:19.589455+00:00 [queued]>
+[2024-09-30T17:42:16.391+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_staging_layer.dbt_run_zone_lookup manual__2024-09-30T17:37:19.589455+00:00 [queued]>
+[2024-09-30T17:42:16.392+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-30T17:42:16.406+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_staging_layer.dbt_run_zone_lookup> on 2024-09-30 17:37:19.589455+00:00
+[2024-09-30T17:42:16.415+0000] {standard_task_runner.py:63} INFO - Started process 225 to run task
+[2024-09-30T17:42:16.418+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'dbt_staging_layer.dbt_run_zone_lookup', 'manual__2024-09-30T17:37:19.589455+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpyt1n8y54']
+[2024-09-30T17:42:16.421+0000] {standard_task_runner.py:91} INFO - Job 46: Subtask dbt_staging_layer.dbt_run_zone_lookup
+[2024-09-30T17:42:16.475+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.dbt_staging_layer.dbt_run_zone_lookup manual__2024-09-30T17:37:19.589455+00:00 [running]> on host 72cf0e8bafa8
+[2024-09-30T17:42:16.572+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='dbt_staging_layer.dbt_run_zone_lookup' AIRFLOW_CTX_EXECUTION_DATE='2024-09-30T17:37:19.589455+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-30T17:37:19.589455+00:00'
+[2024-09-30T17:42:16.573+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-30T17:42:16.586+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-30T17:42:16.586+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models zone_lookup']
+[2024-09-30T17:42:16.601+0000] {subprocess.py:86} INFO - Output:
+[2024-09-30T17:42:19.484+0000] {subprocess.py:93} INFO - [0m17:42:19  Running with dbt=1.8.0
+[2024-09-30T17:42:19.825+0000] {subprocess.py:93} INFO - [0m17:42:19  Registered adapter: postgres=1.8.0
+[2024-09-30T17:42:20.236+0000] {subprocess.py:93} INFO - [0m17:42:20  Unable to do partial parsing because of a version mismatch
+[2024-09-30T17:42:22.421+0000] {subprocess.py:93} INFO - [0m17:42:22  [[33mWARNING[0m]: Deprecated functionality
+[2024-09-30T17:42:22.422+0000] {subprocess.py:93} INFO - The `tests` config has been renamed to `data_tests`. Please see
+[2024-09-30T17:42:22.422+0000] {subprocess.py:93} INFO - https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+[2024-09-30T17:42:22.423+0000] {subprocess.py:93} INFO - information.
+[2024-09-30T17:42:22.446+0000] {subprocess.py:93} INFO - [0m17:42:22  [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_green_tripdata' in the 'models' section of file 'models/Staging/schema.yml'
+[2024-09-30T17:42:22.451+0000] {subprocess.py:93} INFO - [0m17:42:22  [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_yellow_tripdata' in the 'models' section of file 'models/Staging/schema.yml'
+[2024-09-30T17:42:22.455+0000] {subprocess.py:93} INFO - [0m17:42:22  [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_zone_lookup' in the 'models' section of file 'models/Staging/schema.yml'
+[2024-09-30T17:42:22.743+0000] {subprocess.py:93} INFO - [0m17:42:22  Encountered an error:
+[2024-09-30T17:42:22.744+0000] {subprocess.py:93} INFO - Compilation Error
+[2024-09-30T17:42:22.744+0000] {subprocess.py:93} INFO -   Model 'model.fact_trip.zone_lookup' (models/Staging/zone_lookup.sql) depends on a source named 'staging.stg_zone_lookup' which was not found
+[2024-09-30T17:42:23.811+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-09-30T17:42:23.812+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-30T17:42:23.823+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-09-30T17:42:23.826+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Taxi_trip_pipeline, task_id=dbt_staging_layer.dbt_run_zone_lookup, run_id=manual__2024-09-30T17:37:19.589455+00:00, execution_date=20240930T173719, start_date=20240930T174216, end_date=20240930T174223
+[2024-09-30T17:42:23.837+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 46 for task dbt_staging_layer.dbt_run_zone_lookup (Bash command failed. The command returned a non-zero exit code 2.; 225)
+[2024-09-30T17:42:23.857+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-30T17:42:23.868+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

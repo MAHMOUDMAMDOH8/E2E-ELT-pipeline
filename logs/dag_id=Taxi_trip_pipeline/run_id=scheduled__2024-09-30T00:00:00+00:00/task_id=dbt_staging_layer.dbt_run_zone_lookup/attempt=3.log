@@ -1,0 +1,56 @@
+[2024-10-01T09:32:43.223+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-01T09:32:43.246+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_staging_layer.dbt_run_zone_lookup scheduled__2024-09-30T00:00:00+00:00 [queued]>
+[2024-10-01T09:32:43.253+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_staging_layer.dbt_run_zone_lookup scheduled__2024-09-30T00:00:00+00:00 [queued]>
+[2024-10-01T09:32:43.254+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2024-10-01T09:32:43.266+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_staging_layer.dbt_run_zone_lookup> on 2024-09-30 00:00:00+00:00
+[2024-10-01T09:32:43.274+0000] {standard_task_runner.py:63} INFO - Started process 470 to run task
+[2024-10-01T09:32:43.276+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'dbt_staging_layer.dbt_run_zone_lookup', 'scheduled__2024-09-30T00:00:00+00:00', '--job-id', '160', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpp46s3ey5']
+[2024-10-01T09:32:43.279+0000] {standard_task_runner.py:91} INFO - Job 160: Subtask dbt_staging_layer.dbt_run_zone_lookup
+[2024-10-01T09:32:43.323+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.dbt_staging_layer.dbt_run_zone_lookup scheduled__2024-09-30T00:00:00+00:00 [running]> on host fcb0f9e87e2b
+[2024-10-01T09:32:43.407+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='dbt_staging_layer.dbt_run_zone_lookup' AIRFLOW_CTX_EXECUTION_DATE='2024-09-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-30T00:00:00+00:00'
+[2024-10-01T09:32:43.408+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-01T09:32:43.419+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-01T09:32:43.419+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models zone_lookup']
+[2024-10-01T09:32:43.433+0000] {subprocess.py:86} INFO - Output:
+[2024-10-01T09:32:45.998+0000] {subprocess.py:93} INFO - [0m09:32:45  Running with dbt=1.8.0
+[2024-10-01T09:32:46.311+0000] {subprocess.py:93} INFO - [0m09:32:46  Registered adapter: postgres=1.8.0
+[2024-10-01T09:32:46.672+0000] {subprocess.py:93} INFO - [0m09:32:46  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2024-10-01T09:32:46.672+0000] {subprocess.py:93} INFO - There are 2 unused configuration paths:
+[2024-10-01T09:32:46.673+0000] {subprocess.py:93} INFO - - models.fact_trip.Dimensions
+[2024-10-01T09:32:46.673+0000] {subprocess.py:93} INFO - - models.fact_trip.staging
+[2024-10-01T09:32:46.907+0000] {subprocess.py:93} INFO - [0m09:32:46  Found 4 models, 6 data tests, 3 sources, 566 macros
+[2024-10-01T09:32:46.909+0000] {subprocess.py:93} INFO - [0m09:32:46
+[2024-10-01T09:32:47.042+0000] {subprocess.py:93} INFO - [0m09:32:47  Concurrency: 3 threads (target='dev')
+[2024-10-01T09:32:47.043+0000] {subprocess.py:93} INFO - [0m09:32:47
+[2024-10-01T09:32:47.053+0000] {subprocess.py:93} INFO - [0m09:32:47  1 of 1 START sql view model analysis.zone_lookup ............................... [RUN]
+[2024-10-01T09:32:47.142+0000] {subprocess.py:93} INFO - [0m09:32:47  1 of 1 ERROR creating sql view model analysis.zone_lookup ...................... [[31mERROR[0m in 0.09s]
+[2024-10-01T09:32:47.155+0000] {subprocess.py:93} INFO - [0m09:32:47
+[2024-10-01T09:32:47.156+0000] {subprocess.py:93} INFO - [0m09:32:47  Finished running 1 view model in 0 hours 0 minutes and 0.24 seconds (0.24s).
+[2024-10-01T09:32:47.216+0000] {subprocess.py:93} INFO - [0m09:32:47
+[2024-10-01T09:32:47.216+0000] {subprocess.py:93} INFO - [0m09:32:47  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-10-01T09:32:47.217+0000] {subprocess.py:93} INFO - [0m09:32:47
+[2024-10-01T09:32:47.217+0000] {subprocess.py:93} INFO - [0m09:32:47    Database Error in model zone_lookup (models/Staging/zone_lookup.sql)
+[2024-10-01T09:32:47.217+0000] {subprocess.py:93} INFO -   relation "public.zone_lookup" does not exist
+[2024-10-01T09:32:47.218+0000] {subprocess.py:93} INFO -   LINE 15:     FROM "nyc_taxi_trip"."public"."zone_lookup"
+[2024-10-01T09:32:47.218+0000] {subprocess.py:93} INFO -                     ^
+[2024-10-01T09:32:47.218+0000] {subprocess.py:93} INFO -   compiled code at target/run/fact_trip/models/Staging/zone_lookup.sql
+[2024-10-01T09:32:47.218+0000] {subprocess.py:93} INFO - [0m09:32:47
+[2024-10-01T09:32:47.219+0000] {subprocess.py:93} INFO - [0m09:32:47  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-10-01T09:32:48.279+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-10-01T09:32:48.280+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-01T09:32:48.291+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-10-01T09:32:48.295+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Taxi_trip_pipeline, task_id=dbt_staging_layer.dbt_run_zone_lookup, run_id=scheduled__2024-09-30T00:00:00+00:00, execution_date=20240930T000000, start_date=20241001T093243, end_date=20241001T093248
+[2024-10-01T09:32:48.309+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 160 for task dbt_staging_layer.dbt_run_zone_lookup (Bash command failed. The command returned a non-zero exit code 1.; 470)
+[2024-10-01T09:32:48.324+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-10-01T09:32:48.345+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-01T09:32:48.348+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

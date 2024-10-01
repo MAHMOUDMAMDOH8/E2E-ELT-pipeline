@@ -1,0 +1,23 @@
+[2024-09-29T20:34:45.988+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-29T20:34:46.030+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_run_stg_green_tripdata manual__2024-09-29T20:34:42.604742+00:00 [queued]>
+[2024-09-29T20:34:46.047+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_run_stg_green_tripdata manual__2024-09-29T20:34:42.604742+00:00 [queued]>
+[2024-09-29T20:34:46.049+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-29T20:34:46.076+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run_stg_green_tripdata> on 2024-09-29 20:34:42.604742+00:00
+[2024-09-29T20:34:46.086+0000] {standard_task_runner.py:63} INFO - Started process 82 to run task
+[2024-09-29T20:34:46.094+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'dbt_run_stg_green_tripdata', 'manual__2024-09-29T20:34:42.604742+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpoqy5rgvs']
+[2024-09-29T20:34:46.098+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask dbt_run_stg_green_tripdata
+[2024-09-29T20:34:46.208+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.dbt_run_stg_green_tripdata manual__2024-09-29T20:34:42.604742+00:00 [running]> on host c117e05af260
+[2024-09-29T20:34:46.436+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_stg_green_tripdata' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T20:34:42.604742+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T20:34:42.604742+00:00'
+[2024-09-29T20:34:46.437+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-29T20:34:46.461+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-29T20:34:46.462+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project --project-dir /opt/***/dbt_trip --models stg_green_tripdata']
+[2024-09-29T20:34:46.490+0000] {subprocess.py:86} INFO - Output:
+[2024-09-29T20:35:00.950+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-09-29T20:35:00.962+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-29T20:35:00.965+0000] {process_utils.py:132} INFO - Sending 15 to group 82. PIDs of all processes in the group: [88, 82]
+[2024-09-29T20:35:00.966+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 82
+[2024-09-29T20:35:00.967+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-09-29T20:35:00.968+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-09-29T20:35:00.969+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-29T20:35:01.066+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=82, status='terminated', exitcode=0, started='20:34:45') (82) terminated with exit code 0
+[2024-09-29T20:35:01.070+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=88, status='terminated', started='20:34:45') (88) terminated with exit code None

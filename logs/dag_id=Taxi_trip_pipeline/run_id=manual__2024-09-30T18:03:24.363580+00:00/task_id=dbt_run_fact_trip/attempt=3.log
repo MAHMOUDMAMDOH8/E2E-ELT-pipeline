@@ -1,0 +1,56 @@
+[2024-09-30T20:02:28.796+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-30T20:02:28.817+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_run_fact_trip manual__2024-09-30T18:03:24.363580+00:00 [queued]>
+[2024-09-30T20:02:28.827+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_run_fact_trip manual__2024-09-30T18:03:24.363580+00:00 [queued]>
+[2024-09-30T20:02:28.828+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2024-09-30T20:02:28.842+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run_fact_trip> on 2024-09-30 18:03:24.363580+00:00
+[2024-09-30T20:02:28.850+0000] {standard_task_runner.py:63} INFO - Started process 830 to run task
+[2024-09-30T20:02:28.852+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'dbt_run_fact_trip', 'manual__2024-09-30T18:03:24.363580+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp2z352o85']
+[2024-09-30T20:02:28.855+0000] {standard_task_runner.py:91} INFO - Job 88: Subtask dbt_run_fact_trip
+[2024-09-30T20:02:28.898+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.dbt_run_fact_trip manual__2024-09-30T18:03:24.363580+00:00 [running]> on host 72cf0e8bafa8
+[2024-09-30T20:02:28.993+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_fact_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-09-30T18:03:24.363580+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-30T18:03:24.363580+00:00'
+[2024-09-30T20:02:28.995+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-30T20:02:29.007+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-30T20:02:29.008+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models Fact_trip']
+[2024-09-30T20:02:29.024+0000] {subprocess.py:86} INFO - Output:
+[2024-09-30T20:02:31.631+0000] {subprocess.py:93} INFO - [0m20:02:31  Running with dbt=1.8.0
+[2024-09-30T20:02:31.933+0000] {subprocess.py:93} INFO - [0m20:02:31  Registered adapter: postgres=1.8.0
+[2024-09-30T20:02:32.252+0000] {subprocess.py:93} INFO - [0m20:02:32  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2024-09-30T20:02:32.252+0000] {subprocess.py:93} INFO - There are 2 unused configuration paths:
+[2024-09-30T20:02:32.252+0000] {subprocess.py:93} INFO - - models.fact_trip.staging
+[2024-09-30T20:02:32.252+0000] {subprocess.py:93} INFO - - models.fact_trip.Dimensions
+[2024-09-30T20:02:32.479+0000] {subprocess.py:93} INFO - [0m20:02:32  Found 4 models, 6 data tests, 3 sources, 566 macros
+[2024-09-30T20:02:32.482+0000] {subprocess.py:93} INFO - [0m20:02:32
+[2024-09-30T20:02:32.601+0000] {subprocess.py:93} INFO - [0m20:02:32  Concurrency: 3 threads (target='dev')
+[2024-09-30T20:02:32.601+0000] {subprocess.py:93} INFO - [0m20:02:32
+[2024-09-30T20:02:32.612+0000] {subprocess.py:93} INFO - [0m20:02:32  1 of 1 START sql view model analysis.Fact_trip ................................. [RUN]
+[2024-09-30T20:02:32.687+0000] {subprocess.py:93} INFO - [0m20:02:32  1 of 1 ERROR creating sql view model analysis.Fact_trip ........................ [[31mERROR[0m in 0.07s]
+[2024-09-30T20:02:32.699+0000] {subprocess.py:93} INFO - [0m20:02:32
+[2024-09-30T20:02:32.700+0000] {subprocess.py:93} INFO - [0m20:02:32  Finished running 1 view model in 0 hours 0 minutes and 0.22 seconds (0.22s).
+[2024-09-30T20:02:32.748+0000] {subprocess.py:93} INFO - [0m20:02:32
+[2024-09-30T20:02:32.749+0000] {subprocess.py:93} INFO - [0m20:02:32  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-09-30T20:02:32.749+0000] {subprocess.py:93} INFO - [0m20:02:32
+[2024-09-30T20:02:32.750+0000] {subprocess.py:93} INFO - [0m20:02:32    Database Error in model Fact_trip (models/Fact/Fact_trip.sql)
+[2024-09-30T20:02:32.750+0000] {subprocess.py:93} INFO -   relation "analysis.green_trip" does not exist
+[2024-09-30T20:02:32.750+0000] {subprocess.py:93} INFO -   LINE 10:     SELECT * FROM "nyc_taxi_trip"."analysis"."green_trip"
+[2024-09-30T20:02:32.751+0000] {subprocess.py:93} INFO -                              ^
+[2024-09-30T20:02:32.751+0000] {subprocess.py:93} INFO -   compiled code at target/run/fact_trip/models/Fact/Fact_trip.sql
+[2024-09-30T20:02:32.751+0000] {subprocess.py:93} INFO - [0m20:02:32
+[2024-09-30T20:02:32.751+0000] {subprocess.py:93} INFO - [0m20:02:32  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-09-30T20:02:33.812+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-09-30T20:02:33.813+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-30T20:02:33.827+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-09-30T20:02:33.831+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Taxi_trip_pipeline, task_id=dbt_run_fact_trip, run_id=manual__2024-09-30T18:03:24.363580+00:00, execution_date=20240930T180324, start_date=20240930T200228, end_date=20240930T200233
+[2024-09-30T20:02:33.848+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 88 for task dbt_run_fact_trip (Bash command failed. The command returned a non-zero exit code 1.; 830)
+[2024-09-30T20:02:33.878+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-30T20:02:33.895+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-30T20:02:33.897+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

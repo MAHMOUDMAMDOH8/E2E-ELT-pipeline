@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 from airflow.utils.task_group import TaskGroup
-from airflow.operators.bash import BashOperator 
+from airflow.operators.bash import BashOperator
 from scripts.Process_data import *
 from scripts.Load_data import *
 import logging
@@ -39,7 +39,7 @@ def extract_green_date(ti):
         green_trip_df, processed_files = process_green_trip(**db_credentials)
         logging.info('Data extraction for green trip done')
         if green_trip_df is not None:
-            ti.xcom_push(key='green_trip_df', value=green_trip_df) 
+            ti.xcom_push(key='green_trip_df', value=green_trip_df)
             ti.xcom_push(key='processed_files_green', value=processed_files)
             logging.info(f'Pushed green trip data with {len(green_trip_df)} rows to XCom')
         else:
@@ -65,7 +65,7 @@ def extract_yellow_date(ti):
 def load_green_trip_def(ti):
     try:
         db_credentials = load_credentials()
-        green_trip_df = ti.xcom_pull(task_ids='extraction_layer.extract_green_date', key='green_trip_df')  
+        green_trip_df = ti.xcom_pull(task_ids='extraction_layer.extract_green_date', key='green_trip_df')
         if green_trip_df is not None:
             logging.info(f'Loading green trip data started with {len(green_trip_df)} rows')
             load_green_trip(green_trip_df, **db_credentials)
@@ -78,7 +78,7 @@ def load_green_trip_def(ti):
 def load_yellow_trip_def(ti):
     try:
         db_credentials = load_credentials()
-        yellow_trip_df = ti.xcom_pull(task_ids='extraction_layer.extract_yellow_date', key='yellow_trip_df')  
+        yellow_trip_df = ti.xcom_pull(task_ids='extraction_layer.extract_yellow_date', key='yellow_trip_df')
         if yellow_trip_df is not None:
             logging.info(f'Loading yellow trip data started with {len(yellow_trip_df)} rows')
             load_yellow_trip(yellow_trip_df, **db_credentials)
@@ -99,7 +99,7 @@ def mark_files_as_processed(ti):
         if processed_files_green:
             for file_name in processed_files_green:
                 mark_file_as_processed(conn, file_name)
-            logging.info(f'Marked green trip files  as processed.')
+            logging.info(f'Marked green trip files as processed.')
 
         if processed_files_yellow:
             for file_name in processed_files_yellow:
@@ -116,26 +116,26 @@ with dag:
         extract_green_date_task = PythonOperator(
             task_id='extract_green_date',
             python_callable=extract_green_date,
-            provide_context=True  
+            provide_context=True
         )
 
         extract_yellow_date_task = PythonOperator(
             task_id='extract_yellow_date',
             python_callable=extract_yellow_date,
-            provide_context=True 
+            provide_context=True
         )
 
     with TaskGroup('load_layer') as load_group:
         load_green_trip_task = PythonOperator(
             task_id='load_green_trip',
             python_callable=load_green_trip_def,
-            provide_context=True 
+            provide_context=True
         )
 
         load_yellow_trip_task = PythonOperator(
             task_id='load_yellow_trip',
             python_callable=load_yellow_trip_def,
-            provide_context=True  
+            provide_context=True
         )
 
     mark_files_as_processed_task = PythonOperator(
@@ -143,22 +143,25 @@ with dag:
         python_callable=mark_files_as_processed,
         provide_context=True
     )
-    models = ['stg_green_tripdata','stg_yellow_tripdata','stg_zone_lookup']
-
-<<<<<<< HEAD
-    for model in models:
-        dbt_run_task = BashOperator(
-            task_id=f'dbt_run_{model}',
-            bash_command=f'dbt run --profiles-dir /opt/airflow/DBT_Project --project-dir /opt/airflow/dbt_trip --models {model}',
-            dag=dag,
-        )
-=======
->>>>>>> e990b08f54c9980816ec9a88fb8b3ffcdc2a58bb
-
-    extract_green_date_task >> load_green_trip_task >> mark_files_as_processed_task
-    extract_yellow_date_task >> load_yellow_trip_task >> mark_files_as_processed_task 
-
-<<<<<<< HEAD
     
-=======
->>>>>>> e990b08f54c9980816ec9a88fb8b3ffcdc2a58bb
+    # Create the DBT staging layer task group
+    with TaskGroup('dbt_staging_layer') as dbt_staging_group:
+        models = ['green_trip', 'yellow_trip', 'zone_lookup']
+        dbt_run_tasks = []
+        for model in models:
+            dbt_run_task = BashOperator(
+                task_id=f'dbt_run_{model}',
+                bash_command=f'dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models {model}',
+                dag=dag,
+            )
+            dbt_run_tasks.append(dbt_run_task)
+    
+    dbt_run_fact_trip = BashOperator(
+        task_id='dbt_run_fact_trip',
+        bash_command='dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models Fact_trip'
+    )
+
+   
+    extract_green_date_task >> load_green_trip_task >> mark_files_as_processed_task
+    extract_yellow_date_task >> load_yellow_trip_task >> mark_files_as_processed_task
+    mark_files_as_processed_task >> dbt_staging_group >> dbt_run_fact_trip
