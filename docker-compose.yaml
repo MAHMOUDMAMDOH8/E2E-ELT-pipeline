@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 x-airflow-common: &airflow-common
   build: .
@@ -18,15 +18,11 @@ x-airflow-common: &airflow-common
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ./incloud/Staging:/opt/airflow/Staging
-    - ./incloud/Staging/Green_trip_files:/opt/airflow/Green_trip_files
-    - ./incloud/Staging/yellow_trip_files:/opt/airflow/yellow_trip_files
     - ./incloud/DBT_Project/fact_trip:/opt/airflow/dbt_trip
-    - /incloud/Staging/Grean_trip_files/valid_df:/opt/airflow/valid_df
-    - /incloud/Staging/Grean_trip_files/rejected_df:/opt/airflow/rejected_df
+    - ${AIRFLOW_PROJ_DIR:-.}/incloud:/opt/airflow/incloud
     - ./incloud/DBT_Project:/opt/airflow/DBT_Project
     - ${AIRFLOW_PROJ_DIR:-.}/.env:/path/to/airflow/.env
-  user: "${AIRFLOW_UID:-50000}:0"
+  user: "root"
   depends_on:
     postgres:
       condition: service_healthy

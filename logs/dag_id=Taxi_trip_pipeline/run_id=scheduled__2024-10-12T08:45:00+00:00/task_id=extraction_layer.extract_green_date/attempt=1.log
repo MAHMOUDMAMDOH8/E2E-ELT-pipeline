@@ -1,0 +1,26 @@
+[2024-10-12T09:00:01.182+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T09:00:01.205+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date scheduled__2024-10-12T08:45:00+00:00 [queued]>
+[2024-10-12T09:00:01.214+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date scheduled__2024-10-12T08:45:00+00:00 [queued]>
+[2024-10-12T09:00:01.214+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T09:00:01.230+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_green_date> on 2024-10-12 08:45:00+00:00
+[2024-10-12T09:00:01.239+0000] {standard_task_runner.py:63} INFO - Started process 77 to run task
+[2024-10-12T09:00:01.242+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_green_date', 'scheduled__2024-10-12T08:45:00+00:00', '--job-id', '524', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp2zukznxu']
+[2024-10-12T09:00:01.245+0000] {standard_task_runner.py:91} INFO - Job 524: Subtask extraction_layer.extract_green_date
+[2024-10-12T09:00:01.295+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_green_date scheduled__2024-10-12T08:45:00+00:00 [running]> on host f02ce4f01a3b
+[2024-10-12T09:00:01.398+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_green_date' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T08:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T08:45:00+00:00'
+[2024-10-12T09:00:01.399+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T09:00:01.413+0000] {taxi_trip.py:37} INFO - Data extraction for green trip started
+[2024-10-12T09:00:01.416+0000] {db_utils.py:19} ERROR - Error while connecting to PostgreSQL: (psycopg2.OperationalError) connection to server at "172.20.0.3", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2024-10-12T09:00:01.416+0000] {taxi_trip.py:49} ERROR - Error in green trip extraction
+Traceback (most recent call last):
+  File "/opt/airflow/dags/taxi_trip.py", line 39, in extract_green_date
+    green_trip_df, processed_files,archive = process_green_trip(**db_credentials)
+TypeError: cannot unpack non-iterable NoneType object
+[2024-10-12T09:00:01.417+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-12T09:00:01.418+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T09:00:01.428+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_green_date, run_id=scheduled__2024-10-12T08:45:00+00:00, execution_date=20241012T084500, start_date=20241012T090001, end_date=20241012T090001
+[2024-10-12T09:00:01.454+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T09:00:01.464+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

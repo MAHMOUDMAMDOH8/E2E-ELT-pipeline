@@ -1,0 +1,38 @@
+[2024-10-12T13:14:19.126+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T13:14:19.172+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_transformation_layer.dbt_run_model_yellow_trip scheduled__2024-10-12T12:45:00+00:00 [queued]>
+[2024-10-12T13:14:19.189+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.dbt_transformation_layer.dbt_run_model_yellow_trip scheduled__2024-10-12T12:45:00+00:00 [queued]>
+[2024-10-12T13:14:19.189+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T13:14:19.213+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_transformation_layer.dbt_run_model_yellow_trip> on 2024-10-12 12:45:00+00:00
+[2024-10-12T13:14:19.223+0000] {standard_task_runner.py:63} INFO - Started process 355 to run task
+[2024-10-12T13:14:19.227+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'dbt_transformation_layer.dbt_run_model_yellow_trip', 'scheduled__2024-10-12T12:45:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpg70qk6ll']
+[2024-10-12T13:14:19.231+0000] {standard_task_runner.py:91} INFO - Job 37: Subtask dbt_transformation_layer.dbt_run_model_yellow_trip
+[2024-10-12T13:14:19.305+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.dbt_transformation_layer.dbt_run_model_yellow_trip scheduled__2024-10-12T12:45:00+00:00 [running]> on host ebdcf85807fc
+[2024-10-12T13:14:19.441+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='dbt_transformation_layer.dbt_run_model_yellow_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T12:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T12:45:00+00:00'
+[2024-10-12T13:14:19.442+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T13:14:19.465+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-12T13:14:19.466+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --profiles-dir /opt/***/DBT_Project  --project-dir /opt/***/dbt_trip --models yellow_trip']
+[2024-10-12T13:14:19.485+0000] {subprocess.py:86} INFO - Output:
+[2024-10-12T13:14:23.221+0000] {subprocess.py:93} INFO - [0m13:14:23  Running with dbt=1.8.0
+[2024-10-12T13:14:23.763+0000] {subprocess.py:93} INFO - [0m13:14:23  Registered adapter: postgres=1.8.0
+[2024-10-12T13:14:24.370+0000] {subprocess.py:93} INFO - [0m13:14:24  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2024-10-12T13:14:24.370+0000] {subprocess.py:93} INFO - There are 2 unused configuration paths:
+[2024-10-12T13:14:24.371+0000] {subprocess.py:93} INFO - - models.fact_trip.Dimensions
+[2024-10-12T13:14:24.371+0000] {subprocess.py:93} INFO - - models.fact_trip.staging
+[2024-10-12T13:14:25.467+0000] {subprocess.py:93} INFO - [0m13:14:25  Found 4 models, 6 data tests, 3 sources, 566 macros
+[2024-10-12T13:14:25.469+0000] {subprocess.py:93} INFO - [0m13:14:25
+[2024-10-12T13:14:25.669+0000] {subprocess.py:93} INFO - [0m13:14:25  Concurrency: 3 threads (target='dev')
+[2024-10-12T13:14:25.670+0000] {subprocess.py:93} INFO - [0m13:14:25
+[2024-10-12T13:14:25.676+0000] {subprocess.py:93} INFO - [0m13:14:25  1 of 1 START sql view model analysis.yellow_trip ............................... [RUN]
+[2024-10-12T13:14:28.083+0000] {subprocess.py:93} INFO - [0m13:14:28  1 of 1 OK created sql view model analysis.yellow_trip .......................... [[32mCREATE VIEW[0m in 2.40s]
+[2024-10-12T13:14:28.097+0000] {subprocess.py:93} INFO - [0m13:14:28
+[2024-10-12T13:14:28.098+0000] {subprocess.py:93} INFO - [0m13:14:28  Finished running 1 view model in 0 hours 0 minutes and 2.63 seconds (2.63s).
+[2024-10-12T13:14:28.155+0000] {subprocess.py:93} INFO - [0m13:14:28
+[2024-10-12T13:14:28.156+0000] {subprocess.py:93} INFO - [0m13:14:28  [32mCompleted successfully[0m
+[2024-10-12T13:14:28.156+0000] {subprocess.py:93} INFO - [0m13:14:28
+[2024-10-12T13:14:28.157+0000] {subprocess.py:93} INFO - [0m13:14:28  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2024-10-12T13:14:34.610+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-12T13:14:34.611+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T13:14:34.644+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=dbt_transformation_layer.dbt_run_model_yellow_trip, run_id=scheduled__2024-10-12T12:45:00+00:00, execution_date=20241012T124500, start_date=20241012T131419, end_date=20241012T131434
+[2024-10-12T13:14:34.684+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T13:14:34.718+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-12T13:14:34.721+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

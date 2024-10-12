@@ -36,11 +36,12 @@ def extract_green_date(ti):
     try:
         logging.info('Data extraction for green trip started')
         db_credentials = load_credentials()
-        green_trip_df, processed_files = process_green_trip(**db_credentials)
+        green_trip_df, processed_files,archive = process_green_trip(**db_credentials)
         logging.info('Data extraction for green trip done')
         if green_trip_df is not None:
             ti.xcom_push(key='green_trip_df', value=green_trip_df)
             ti.xcom_push(key='processed_files_green', value=processed_files)
+            ti.xcom_push(key='archive_green',value = archive)
             logging.info(f'Pushed green trip data with {len(green_trip_df)} rows to XCom')
         else:
             logging.warning("No data found for green trip")
@@ -51,11 +52,12 @@ def extract_yellow_date(ti):
     try:
         logging.info('Data extraction for yellow trip started')
         db_credentials = load_credentials()
-        yellow_trip_df, processed_files = process_yellow_trip(**db_credentials)
+        yellow_trip_df, processed_files,archive = process_yellow_trip(**db_credentials)
         logging.info('Data extraction for yellow trip done')
         if yellow_trip_df is not None:
             ti.xcom_push(key='yellow_trip_df', value=yellow_trip_df)
             ti.xcom_push(key='processed_files_yellow', value=processed_files)
+            ti.xcom_push(key='archive_yellow',value = archive)
             logging.info(f'Pushed yellow trip data with {len(yellow_trip_df)} rows to XCom')
         else:
             logging.warning("No data found for yellow trip")
@@ -111,6 +113,26 @@ def mark_files_as_processed(ti):
     except Exception as e:
         logging.error("Error in marking files as processed", exc_info=True)
 
+def archiving(ti):
+    try:
+        archive_green = ti.xcom_pull(task_ids='extraction_layer.extract_green_date', key='archive_green')
+        archive_yellow = ti.xcom_pull(task_ids='extraction_layer.extract_yellow_date', key='archive_yellow')
+
+        if archive_green:
+            move_files_to_archive(archive_green)
+            logging.info("Files archive_green successfully.")
+        else:
+            logging.warning("No files to archive_green.")
+        if archive_yellow:
+            move_files_to_archive(archive_yellow)
+            logging.info("Files archive_yellow successfully.")
+        else:
+            logging.warning("No files to archive_yellow.")
+
+    except Exception as e:
+        logging.error("Error in archiving files", exc_info=True)
+
+
 with dag:
     with TaskGroup('extraction_layer') as extraction_group:
         extract_green_date_task = PythonOperator(
@@ -143,6 +165,11 @@ with dag:
         python_callable=mark_files_as_processed,
         provide_context=True
     )
+    move_files_to_archive_task = PythonOperator(
+        task_id = 'move_files_to_archive',
+        python_callable = archiving,
+        provide_context = True
+    )
     
     # Create the DBT staging layer task group
     with TaskGroup('dbt_transformation_layer') as dbt_staging_group:
@@ -164,4 +191,4 @@ with dag:
    
     extract_green_date_task >> load_green_trip_task >> mark_files_as_processed_task
     extract_yellow_date_task >> load_yellow_trip_task >> mark_files_as_processed_task
-    mark_files_as_processed_task >> dbt_staging_group >> dbt_run_fact_trip
+    mark_files_as_processed_task >> move_files_to_archive_task >> dbt_staging_group >> dbt_run_fact_trip

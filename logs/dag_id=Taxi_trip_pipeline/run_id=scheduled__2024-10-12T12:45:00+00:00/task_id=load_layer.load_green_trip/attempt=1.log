@@ -1,0 +1,43 @@
+[2024-10-12T13:03:16.301+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T13:03:16.325+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip scheduled__2024-10-12T12:45:00+00:00 [queued]>
+[2024-10-12T13:03:16.336+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip scheduled__2024-10-12T12:45:00+00:00 [queued]>
+[2024-10-12T13:03:16.337+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T13:03:16.365+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_layer.load_green_trip> on 2024-10-12 12:45:00+00:00
+[2024-10-12T13:03:16.377+0000] {standard_task_runner.py:63} INFO - Started process 124 to run task
+[2024-10-12T13:03:16.381+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_layer.load_green_trip', 'scheduled__2024-10-12T12:45:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpmrd9vn7f']
+[2024-10-12T13:03:16.383+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask load_layer.load_green_trip
+[2024-10-12T13:03:16.464+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip scheduled__2024-10-12T12:45:00+00:00 [running]> on host ebdcf85807fc
+[2024-10-12T13:03:16.609+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_layer.load_green_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T12:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T12:45:00+00:00'
+[2024-10-12T13:03:16.611+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T13:03:17.329+0000] {taxi_trip.py:72} INFO - Loading green trip data started with 339807 rows
+[2024-10-12T13:03:17.331+0000] {Load_data.py:11} INFO - Loading green trip data...
+[2024-10-12T13:03:17.336+0000] {Load_data.py:12} INFO - green trip with 339807rows
+[2024-10-12T13:03:17.713+0000] {db_utils.py:31} INFO - Loading data into table green_trip...
+[2024-10-12T13:03:17.720+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-12T13:03:41.628+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-10-12T13:03:41.629+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-10-12T13:03:41.631+0000] {process_utils.py:132} INFO - Sending 15 to group 124. PIDs of all processes in the group: [124]
+[2024-10-12T13:03:41.632+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 124
+[2024-10-12T13:03:41.632+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-10-12T13:03:41.633+0000] {db_utils.py:25} INFO - PostgreSQL connection is closed
+[2024-10-12T13:03:41.634+0000] {db_utils.py:28} INFO - SQLAlchemy engine disposed
+[2024-10-12T13:03:41.635+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T13:03:41.765+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=124, status='terminated', exitcode=0, started='13:03:15') (124) terminated with exit code 0
+[2024-10-12T13:14:13.685+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T13:14:13.724+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip scheduled__2024-10-12T12:45:00+00:00 [queued]>
+[2024-10-12T13:14:13.745+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip scheduled__2024-10-12T12:45:00+00:00 [queued]>
+[2024-10-12T13:14:13.746+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T13:14:13.772+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_layer.load_green_trip> on 2024-10-12 12:45:00+00:00
+[2024-10-12T13:14:13.785+0000] {standard_task_runner.py:63} INFO - Started process 331 to run task
+[2024-10-12T13:14:13.790+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'load_layer.load_green_trip', 'scheduled__2024-10-12T12:45:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpw1n_umkf']
+[2024-10-12T13:14:13.795+0000] {standard_task_runner.py:91} INFO - Job 29: Subtask load_layer.load_green_trip
+[2024-10-12T13:14:13.881+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.load_layer.load_green_trip scheduled__2024-10-12T12:45:00+00:00 [running]> on host ebdcf85807fc
+[2024-10-12T13:14:14.024+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='load_layer.load_green_trip' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T12:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T12:45:00+00:00'
+[2024-10-12T13:14:14.026+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T13:14:14.056+0000] {taxi_trip.py:76} ERROR - No data found for green trip
+[2024-10-12T13:14:14.057+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-12T13:14:14.057+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T13:14:14.070+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=load_layer.load_green_trip, run_id=scheduled__2024-10-12T12:45:00+00:00, execution_date=20241012T124500, start_date=20241012T131413, end_date=20241012T131414
+[2024-10-12T13:14:14.125+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T13:14:14.166+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-12T13:14:14.168+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

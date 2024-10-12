@@ -1,6 +1,11 @@
 
 -- Active: 1718352668152@@172.20.0.3@5432@nyc_taxi_trip@public
 
+CREATE DATABASE nyc_taxi_trip;
+CREATE SCHEMA analysis;
+
+use  nyc_taxi_trip;
+
 CREATE TABLE IF NOT EXISTS zone_lookup (
     LocationID INT PRIMARY KEY,
     Borough VARCHAR(255),

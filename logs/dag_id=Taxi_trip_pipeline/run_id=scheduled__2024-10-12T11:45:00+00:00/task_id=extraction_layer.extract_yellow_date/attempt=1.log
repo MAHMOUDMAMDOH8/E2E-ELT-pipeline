@@ -1,0 +1,43 @@
+[2024-10-12T12:02:09.457+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T12:02:09.478+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date scheduled__2024-10-12T11:45:00+00:00 [queued]>
+[2024-10-12T12:02:09.488+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date scheduled__2024-10-12T11:45:00+00:00 [queued]>
+[2024-10-12T12:02:09.488+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T12:02:09.503+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_yellow_date> on 2024-10-12 11:45:00+00:00
+[2024-10-12T12:02:09.511+0000] {standard_task_runner.py:63} INFO - Started process 345 to run task
+[2024-10-12T12:02:09.515+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_yellow_date', 'scheduled__2024-10-12T11:45:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpzf2tdnzv']
+[2024-10-12T12:02:09.517+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask extraction_layer.extract_yellow_date
+[2024-10-12T12:02:09.562+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date scheduled__2024-10-12T11:45:00+00:00 [running]> on host 4f9d1e7ade51
+[2024-10-12T12:02:09.652+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_yellow_date' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T11:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T11:45:00+00:00'
+[2024-10-12T12:02:09.653+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T12:02:09.668+0000] {taxi_trip.py:53} INFO - Data extraction for yellow trip started
+[2024-10-12T12:02:09.676+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-12T12:02:09.676+0000] {Process_data.py:47} INFO - Start transforming Yellow Trip data...
+[2024-10-12T12:02:09.677+0000] {taxi_trip.py:56} INFO - Data extraction for yellow trip done
+[2024-10-12T12:02:09.677+0000] {taxi_trip.py:63} WARNING - No data found for yellow trip
+[2024-10-12T12:02:09.677+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-12T12:02:09.678+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T12:02:09.690+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_yellow_date, run_id=scheduled__2024-10-12T11:45:00+00:00, execution_date=20241012T114500, start_date=20241012T120209, end_date=20241012T120209
+[2024-10-12T12:02:09.727+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T12:02:09.743+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-10-12T12:08:25.282+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T12:08:25.350+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date scheduled__2024-10-12T11:45:00+00:00 [queued]>
+[2024-10-12T12:08:25.374+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date scheduled__2024-10-12T11:45:00+00:00 [queued]>
+[2024-10-12T12:08:25.375+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T12:08:25.411+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extraction_layer.extract_yellow_date> on 2024-10-12 11:45:00+00:00
+[2024-10-12T12:08:25.426+0000] {standard_task_runner.py:63} INFO - Started process 53 to run task
+[2024-10-12T12:08:25.431+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'extraction_layer.extract_yellow_date', 'scheduled__2024-10-12T11:45:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmpa_w82_k3']
+[2024-10-12T12:08:25.438+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask extraction_layer.extract_yellow_date
+[2024-10-12T12:08:25.517+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.extraction_layer.extract_yellow_date scheduled__2024-10-12T11:45:00+00:00 [running]> on host e1ee2fad10db
+[2024-10-12T12:08:25.606+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='extraction_layer.extract_yellow_date' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T11:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T11:45:00+00:00'
+[2024-10-12T12:08:25.607+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T12:08:25.626+0000] {taxi_trip.py:53} INFO - Data extraction for yellow trip started
+[2024-10-12T12:08:25.632+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-12T12:08:25.633+0000] {Process_data.py:47} INFO - Start transforming Yellow Trip data...
+[2024-10-12T12:08:25.633+0000] {taxi_trip.py:56} INFO - Data extraction for yellow trip done
+[2024-10-12T12:08:25.634+0000] {taxi_trip.py:63} WARNING - No data found for yellow trip
+[2024-10-12T12:08:25.634+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-12T12:08:25.634+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T12:08:25.645+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=extraction_layer.extract_yellow_date, run_id=scheduled__2024-10-12T11:45:00+00:00, execution_date=20241012T114500, start_date=20241012T120825, end_date=20241012T120825
+[2024-10-12T12:08:25.683+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T12:08:25.740+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-12T12:08:25.743+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

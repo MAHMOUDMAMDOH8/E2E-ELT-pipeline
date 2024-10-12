@@ -1,0 +1,41 @@
+[2024-10-12T10:15:04.914+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T10:15:04.933+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.mark_files_as_processed scheduled__2024-10-12T10:00:00+00:00 [queued]>
+[2024-10-12T10:15:04.942+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.mark_files_as_processed scheduled__2024-10-12T10:00:00+00:00 [queued]>
+[2024-10-12T10:15:04.943+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T10:15:04.954+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): mark_files_as_processed> on 2024-10-12 10:00:00+00:00
+[2024-10-12T10:15:04.961+0000] {standard_task_runner.py:63} INFO - Started process 658 to run task
+[2024-10-12T10:15:04.964+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'mark_files_as_processed', 'scheduled__2024-10-12T10:00:00+00:00', '--job-id', '606', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmptwgks4ph']
+[2024-10-12T10:15:04.966+0000] {standard_task_runner.py:91} INFO - Job 606: Subtask mark_files_as_processed
+[2024-10-12T10:15:05.009+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.mark_files_as_processed scheduled__2024-10-12T10:00:00+00:00 [running]> on host cb13d84d2d77
+[2024-10-12T10:15:05.102+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='mark_files_as_processed' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T10:00:00+00:00'
+[2024-10-12T10:15:05.103+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T10:15:05.125+0000] {db_utils.py:16} INFO - Connected to PostgreSQL database successfully
+[2024-10-12T10:15:05.147+0000] {taxi_trip.py:111} INFO - All files marked as processed successfully.
+[2024-10-12T10:15:05.148+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-12T10:15:05.148+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T10:15:05.163+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=mark_files_as_processed, run_id=scheduled__2024-10-12T10:00:00+00:00, execution_date=20241012T100000, start_date=20241012T101504, end_date=20241012T101505
+[2024-10-12T10:15:05.216+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T10:15:05.247+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-12T10:15:05.249+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-10-12T10:22:26.377+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-12T10:22:26.398+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.mark_files_as_processed scheduled__2024-10-12T10:00:00+00:00 [queued]>
+[2024-10-12T10:22:26.406+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Taxi_trip_pipeline.mark_files_as_processed scheduled__2024-10-12T10:00:00+00:00 [queued]>
+[2024-10-12T10:22:26.407+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-12T10:22:26.418+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): mark_files_as_processed> on 2024-10-12 10:00:00+00:00
+[2024-10-12T10:22:26.426+0000] {standard_task_runner.py:63} INFO - Started process 62 to run task
+[2024-10-12T10:22:26.428+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Taxi_trip_pipeline', 'mark_files_as_processed', 'scheduled__2024-10-12T10:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/taxi_trip.py', '--cfg-path', '/tmp/tmp06tgjy1i']
+[2024-10-12T10:22:26.430+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask mark_files_as_processed
+[2024-10-12T10:22:26.474+0000] {task_command.py:426} INFO - Running <TaskInstance: Taxi_trip_pipeline.mark_files_as_processed scheduled__2024-10-12T10:00:00+00:00 [running]> on host bcbc9bb54b17
+[2024-10-12T10:22:26.553+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='Taxi_trip_pipeline' AIRFLOW_CTX_TASK_ID='mark_files_as_processed' AIRFLOW_CTX_EXECUTION_DATE='2024-10-12T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-12T10:00:00+00:00'
+[2024-10-12T10:22:26.554+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-12T10:22:26.565+0000] {db_utils.py:19} ERROR - Error while connecting to PostgreSQL: (psycopg2.OperationalError) connection to server at "172.20.0.3", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2024-10-12T10:22:26.582+0000] {taxi_trip.py:111} INFO - All files marked as processed successfully.
+[2024-10-12T10:22:26.583+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-12T10:22:26.583+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-12T10:22:26.592+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Taxi_trip_pipeline, task_id=mark_files_as_processed, run_id=scheduled__2024-10-12T10:00:00+00:00, execution_date=20241012T100000, start_date=20241012T102226, end_date=20241012T102226
+[2024-10-12T10:22:26.641+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-12T10:22:26.669+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-12T10:22:26.670+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
