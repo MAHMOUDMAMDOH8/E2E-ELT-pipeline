@@ -41,9 +41,9 @@ The goal of this project is to build an end-to-end data pipeline for NYC Taxi tr
 
 ### db_utils.py
 - `create_connection`: Establishes a connection to the PostgreSQL database using SQLAlchemy.
-- `close_connection`: Closes the PostgreSQL connection and disposes of the engine.
+- `close_connection`: Closes the PostgreSQL connection .
 - `insert_data`: Inserts a Pandas DataFrame into a PostgreSQL table.
-- `is_file_processed`: Checks if a file has already been processed by querying the `processed_files` table.
+- `is_file_processed`: Checks if a file has already been processed by select data in the `processed_files` table .
 - `mark_file_as_processed`: Marks a file as processed by inserting its name into the `processed_files` table.
 
 ### Process_data.py
