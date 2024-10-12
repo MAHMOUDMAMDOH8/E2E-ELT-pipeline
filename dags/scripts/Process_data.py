@@ -79,12 +79,11 @@ def move_files_to_archive(paths):
     for file_path in paths:
         if os.path.exists(file_path):
             try:
-                # Construct the destination file path
                 dest_path = os.path.join(archive_dir, os.path.basename(file_path))
-                shutil.move(file_path, dest_path)  # Copy the file to the archive
+                shutil.move(file_path, dest_path)  
                 logging.info(f'Moved {file_path} to archive to {dest_path}')
             except Exception as e:
-                logging.error(f'Error while moving {file_path}: {e}')  # Use error level for exceptions
+                logging.error(f'Error while moving {file_path}: {e}') 
         else:
             logging.warning(f'{file_path} does not exist')
 
