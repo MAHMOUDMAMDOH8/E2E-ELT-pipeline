@@ -90,6 +90,7 @@ The database follows a star schema design, optimized for efficient queries and a
 
 ## Reporting Layer
 - **Power BI**: Used to visualize key metrics and trends from the NYC Taxi trip data. Reports can be generated from the transformed data in the data warehouse.
+![image](https://github.com/user-attachments/assets/7aace305-1946-4acb-8dc4-59e9f728f329)
 
 ## How to Run the Project
 1. **Clone the Repository**:  
