@@ -75,6 +75,10 @@ The Airflow DAG orchestrates the steps of the pipeline:
 4. **DBT Transformation Layer**:
    - Runs dbt models for Green and Yellow trips, and zone lookups.
    - Final transformation is done using the `Fact_trips` dbt model.
+![dbt yellow trip model](https://github.com/user-attachments/assets/ba751f40-8fec-4ac4-bb52-a5f0d80924e1)
+![dbt green trip model](https://github.com/user-attachments/assets/d5aad0a9-d057-47f4-90e2-847a846e5836)
+![dbt fact trip model](https://github.com/user-attachments/assets/77c336bd-a030-4c54-8621-f71482699049)
+
 
 ## Database Schema
 The database follows a star schema design, optimized for efficient queries and analysis. Fact and dimension tables include:
